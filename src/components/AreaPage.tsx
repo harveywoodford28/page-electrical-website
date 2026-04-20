@@ -4,7 +4,6 @@ import { ArrowRight, CheckCircle2, MapPin, Phone } from 'lucide-react';
 import Reveal from './Reveal';
 import ServiceCard from './ServiceCard';
 import CTABand from './CTABand';
-import HampshireCoverageMap from './HampshireCoverageMap';
 import CertificationStrip from './CertificationStrip';
 import { services, siteConfig } from '@/lib/data';
 
@@ -166,19 +165,6 @@ export default function AreaPage({
               </div>
             </Reveal>
           ))}
-        </div>
-      </section>
-
-      {/* Map */}
-      <section className="bg-mist py-20 md:py-24">
-        <div className="container-x">
-          <Reveal className="max-w-2xl mb-10">
-            <p className="eyebrow mb-3">Coverage</p>
-            <h2 className="h-display text-3xl md:text-4xl leading-[1.1] underline-grow">
-              {town} and the wider Solent.
-            </h2>
-          </Reveal>
-          <HampshireCoverageMap />
         </div>
       </section>
 

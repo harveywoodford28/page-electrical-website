@@ -8,11 +8,9 @@ import FAQAccordion from '@/components/FAQAccordion';
 import CTABand from '@/components/CTABand';
 import TrustStrip from '@/components/TrustStrip';
 import CertificationStrip from '@/components/CertificationStrip';
-import HampshireCoverageMap from '@/components/HampshireCoverageMap';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 import RecentlyCompleted from '@/components/RecentlyCompleted';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
-import ResponseBanner from '@/components/ResponseBanner';
 import { reviews, services, faqs, siteConfig, beforeAfterExamples } from '@/lib/data';
 
 const topFaqs = faqs.slice(0, 3);
@@ -54,7 +52,6 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
-      <ResponseBanner />
       <Hero />
 
       <TrustStrip />
@@ -84,28 +81,6 @@ export default function HomePage() {
             See all services <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
           </Link>
         </Reveal>
-      </section>
-
-      {/* COVERAGE MAP */}
-      <section className="bg-mist py-20 md:py-24">
-        <div className="container-x">
-          <Reveal className="max-w-2xl mb-12">
-            <p className="eyebrow mb-3">Where we work</p>
-            <h2 className="h-display text-3xl md:text-5xl leading-[1.05] underline-grow">
-              Serving Hampshire &amp; the Solent.
-            </h2>
-            <p className="mt-8 text-lg text-muted leading-relaxed max-w-prose">
-              Gosport, Portsmouth, Fareham, Southampton, Havant and surrounding towns — hover a
-              marker for coverage detail.
-            </p>
-          </Reveal>
-          <HampshireCoverageMap />
-          <Reveal delay={0.15} className="mt-10 text-center">
-            <Link href="/areas" className="btn-outline">
-              Areas we serve <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
-            </Link>
-          </Reveal>
-        </div>
       </section>
 
       {/* OUR WORK — before/after */}

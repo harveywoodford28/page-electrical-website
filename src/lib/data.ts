@@ -56,12 +56,9 @@ export const services = [
     description:
       'Split-system and multi-split air conditioning installation, servicing and repair. Keep homes, shops and offices comfortable year-round.',
     icon: 'Snowflake',
-    image: '/images/service-repairs.jpg',
-    gallery: [
-      '/images/service-repairs.jpg',
-      '/images/service-maintenance.jpg',
-      '/images/hero-2.jpg',
-    ],
+    // TODO FROM MATT: Add real AC install photos to enable card image
+    image: null,
+    gallery: [],
   },
   {
     slug: 'building',
@@ -70,12 +67,9 @@ export const services = [
     description:
       'End-to-end M&E for extensions, refurbishments and light commercial fit-outs. Coordinated with other trades and delivered on programme.',
     icon: 'Building2',
-    image: '/images/service-maintenance.jpg',
-    gallery: [
-      '/images/service-maintenance.jpg',
-      '/images/about-hero.jpg',
-      '/images/hero-1.jpg',
-    ],
+    // TODO FROM MATT: Add real building/M&E photos to enable card image
+    image: null,
+    gallery: [],
   },
   {
     slug: 'solar',
@@ -84,12 +78,9 @@ export const services = [
     description:
       'Solar panel design and installation, battery storage, and grid-tied systems. Help home and business owners take control of rising energy costs.',
     icon: 'Sun',
-    image: '/images/hero-1.jpg',
-    gallery: [
-      '/images/hero-1.jpg',
-      '/images/about-hero.jpg',
-      '/images/reviews-hero.jpg',
-    ],
+    // TODO FROM MATT: Add real solar install photos to enable card image
+    image: null,
+    gallery: [],
   },
   {
     slug: 'ev-chargers',
@@ -98,12 +89,9 @@ export const services = [
     description:
       'OZEV-approved EV charge point installation for homes and workplaces. Tidy cabling, fast turnaround and clear advice on the right charger for you.',
     icon: 'PlugZap',
-    image: '/images/hero-2.jpg',
-    gallery: [
-      '/images/hero-2.jpg',
-      '/images/service-repairs.jpg',
-      '/images/faq-image.jpg',
-    ],
+    // TODO FROM MATT: Add real EV charger install photos to enable card image
+    image: null,
+    gallery: [],
   },
 ] as const;
 

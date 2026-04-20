@@ -1,30 +1,76 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Phone, ArrowRight } from 'lucide-react';
 import { siteConfig } from '@/lib/data';
 
+// Hero background collage — cycles through real Page Electrical work photos.
+// TODO FROM MATT: Drop more real job photos into /public/images and add to this array.
+const heroImages = [
+  '/images/hero-1.jpg',
+  '/images/hero-2.jpg',
+  '/images/service-installations.jpg',
+];
+
+const INTERVAL_MS = 6000;
+
 export default function Hero() {
+  const [index, setIndex] = useState(0);
   const headline = 'Reliable Electrical Services in Hampshire.';
   const words = headline.split(' ');
+
+  useEffect(() => {
+    const id = setInterval(
+      () => setIndex((i) => (i + 1) % heroImages.length),
+      INTERVAL_MS
+    );
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section className="relative isolate overflow-hidden text-white min-h-[92vh] flex items-end">
-      {/* Full-bleed Ken Burns background image */}
+      {/* Cross-fading background collage */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="ken-burns h-full w-full">
-          <Image
-            src="/images/hero-1.jpg"
-            alt="Page Electrical at work"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-        </div>
+        <AnimatePresence mode="sync">
+          <motion.div
+            key={heroImages[index]}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1.0 }}
+            exit={{ opacity: 0, scale: 1.0 }}
+            transition={{ duration: 1.8, ease: 'easeInOut' }}
+            className="absolute inset-0"
+          >
+            <div className="ken-burns h-full w-full">
+              <Image
+                src={heroImages[index]}
+                alt=""
+                fill
+                priority={index === 0}
+                sizes="100vw"
+                className="object-cover"
+              />
+            </div>
+          </motion.div>
+        </AnimatePresence>
         <div aria-hidden className="absolute inset-0 hero-overlay" />
         <div aria-hidden className="absolute inset-0 grain opacity-[0.15]" />
+      </div>
+
+      {/* Progress dots */}
+      <div className="absolute bottom-6 right-6 z-20 hidden md:flex gap-2">
+        {heroImages.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setIndex(i)}
+            aria-label={`Go to hero image ${i + 1}`}
+            className={`h-1.5 rounded-full transition-all duration-500 ${
+              i === index ? 'w-8 bg-brand-light' : 'w-4 bg-white/40 hover:bg-white/60'
+            }`}
+          />
+        ))}
       </div>
 
       <div className="container-x relative pt-40 pb-16 lg:pt-48 lg:pb-24 w-full">

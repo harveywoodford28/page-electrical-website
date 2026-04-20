@@ -11,7 +11,7 @@ type Props = {
   eyebrow: string;
   title: string;
   intro: string;
-  image: string;
+  image?: string | null;
   gallery?: readonly string[];
   whyUs: string[];
   process: { title: string; body: string }[];
@@ -32,23 +32,41 @@ export default function ServiceDetail({
   faqs,
   seasonalNote,
 }: Props) {
+  const hasImage = !!image;
   return (
     <>
-      {/* Full-bleed hero with image background */}
+      {/* Full-bleed hero — image if we have one, brand gradient if not */}
       <section className="relative isolate overflow-hidden text-white min-h-[70vh] flex items-end">
         <div className="absolute inset-0 -z-10">
-          <div className="ken-burns h-full w-full">
-            <Image
-              src={image}
-              alt={title}
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover"
-            />
-          </div>
-          <div aria-hidden className="absolute inset-0 hero-overlay" />
-          <div aria-hidden className="absolute inset-0 grain opacity-[0.15]" />
+          {hasImage ? (
+            <>
+              <div className="ken-burns h-full w-full">
+                <Image
+                  src={image!}
+                  alt={title}
+                  fill
+                  priority
+                  sizes="100vw"
+                  className="object-cover"
+                />
+              </div>
+              <div aria-hidden className="absolute inset-0 hero-overlay" />
+              <div aria-hidden className="absolute inset-0 grain opacity-[0.15]" />
+            </>
+          ) : (
+            <>
+              <div className="absolute inset-0 bg-gradient-to-br from-ink via-ink to-brand-dark/90" />
+              <div
+                aria-hidden
+                className="absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full bg-brand/25 blur-3xl"
+              />
+              <div
+                aria-hidden
+                className="absolute -bottom-40 -left-40 h-[480px] w-[480px] rounded-full bg-brand/15 blur-3xl"
+              />
+              <div aria-hidden className="absolute inset-0 grain opacity-[0.12]" />
+            </>
+          )}
         </div>
         <div className="container-x relative pt-40 pb-16 lg:pt-48 lg:pb-20 w-full">
           <div className="max-w-3xl">
