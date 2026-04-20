@@ -1,9 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  output: 'export',
   images: {
-    formats: ['image/avif', 'image/webp'],
+    // Static export requires unoptimized images
+    unoptimized: true,
   },
+  trailingSlash: true,
 };
 
 export default nextConfig;
