@@ -36,9 +36,20 @@ export default function ServiceCard({ slug, title, short, icon, image, index = 0
             className="object-cover transition-transform duration-[1200ms] group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/15 to-transparent" />
-          <div className="absolute top-4 left-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand text-white shadow-lg shadow-brand/30">
-            <ServiceIcon name={icon} className="h-5 w-5" strokeWidth={2.25} />
-          </div>
+          <motion.div
+            className="absolute top-4 left-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand text-white shadow-lg shadow-brand/30"
+            whileHover={{ scale: 1.12, rotate: 8 }}
+            animate={{}}
+            transition={{ type: 'spring', stiffness: 320, damping: 14 }}
+          >
+            <motion.span
+              initial={false}
+              whileHover={{ scale: 1.15 }}
+              transition={{ type: 'spring', stiffness: 260, damping: 12 }}
+            >
+              <ServiceIcon name={icon} className="h-6 w-6" strokeWidth={2.25} />
+            </motion.span>
+          </motion.div>
           <div className="absolute bottom-4 left-4 right-4">
             <h3 className="text-xl font-bold text-white drop-shadow">{title}</h3>
           </div>

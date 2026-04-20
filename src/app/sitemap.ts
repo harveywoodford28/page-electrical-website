@@ -3,9 +3,10 @@ import { services } from '@/lib/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://page-electrical.co.uk';
-  const routes = ['', '/about', '/services', '/reviews', '/faq', '/contact'];
+  const routes = ['', '/about', '/services', '/reviews', '/faq', '/contact', '/areas'];
   const serviceRoutes = services.map((s) => `/services/${s.slug}`);
-  return [...routes, ...serviceRoutes].map((r) => ({
+  const areaRoutes = ['/areas/gosport', '/areas/portsmouth', '/areas/fareham', '/areas/southampton'];
+  return [...routes, ...serviceRoutes, ...areaRoutes].map((r) => ({
     url: `${base}${r}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,

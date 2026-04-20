@@ -128,3 +128,67 @@ body {
   0% { width: 0; }
   100% { width: 3.5rem; }
 }
+
+/* Sticky mobile call button — subtle pulse every 5s */
+.sticky-call-pulse {
+  animation: stickyCallPulse 5s ease-in-out infinite;
+}
+@keyframes stickyCallPulse {
+  0%, 85%, 100% { box-shadow: 0 10px 25px rgba(94, 173, 67, 0.35); }
+  88% { box-shadow: 0 0 0 0 rgba(94, 173, 67, 0.55); transform: scale(1); }
+  93% { box-shadow: 0 0 0 14px rgba(94, 173, 67, 0); transform: scale(1.04); }
+}
+
+/* Horizontal marquee for the "Recently completed" ticker */
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: tickerScroll 40s linear infinite;
+}
+.ticker-wrap:hover .ticker-track {
+  animation-play-state: paused;
+}
+@keyframes tickerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Before/after slider */
+.ba-slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  touch-action: none;
+  user-select: none;
+}
+.ba-slider img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ba-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--brand);
+  transform: translateX(-50%);
+  cursor: ew-resize;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.6);
+}
+.ba-handle-knob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: var(--brand);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+}

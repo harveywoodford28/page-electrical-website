@@ -3,6 +3,7 @@ import './globals.css';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import BackToTop from '@/components/BackToTop';
+import StickyCallButton from '@/components/StickyCallButton';
 import { siteConfig } from '@/lib/data';
 
 export const metadata: Metadata = {
@@ -60,6 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
         <BackToTop />
+        <StickyCallButton />
       </body>
     </html>
   );

@@ -5,6 +5,7 @@ import { CheckCircle2, ArrowRight, MapPin } from 'lucide-react';
 import Reveal from '@/components/Reveal';
 import CTABand from '@/components/CTABand';
 import ServiceIcon from '@/components/ServiceIcon';
+import HampshireCoverageMap from '@/components/HampshireCoverageMap';
 import { siteConfig, values } from '@/lib/data';
 
 export const metadata: Metadata = {
@@ -234,10 +235,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Coverage */}
+      {/* Coverage — interactive map */}
       <section className="bg-mist py-20 md:py-24">
-        <div className="container-x grid gap-12 lg:grid-cols-2 items-center">
-          <Reveal>
+        <div className="container-x">
+          <Reveal className="max-w-2xl mb-10">
             <p className="eyebrow mb-3">Service area</p>
             <h2 className="h-display text-3xl md:text-4xl leading-[1.1] underline-grow">
               We cover Hampshire — Gosport, Portsmouth and beyond.
@@ -246,7 +247,13 @@ export default function AboutPage() {
               Our core service area runs along the south Hampshire coast. For larger jobs we
               travel further — just ask.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+          </Reveal>
+          <Reveal delay={0.1}>
+            <HampshireCoverageMap />
+          </Reveal>
+
+          <Reveal delay={0.2} className="mt-10 grid gap-12 lg:grid-cols-2 items-start">
+            <div className="flex flex-wrap gap-3">
               {siteConfig.cities.map((c) => (
                 <span
                   key={c}
@@ -257,8 +264,6 @@ export default function AboutPage() {
                 </span>
               ))}
             </div>
-          </Reveal>
-          <Reveal delay={0.15}>
             <div className="rounded-2xl bg-white border border-ink/5 shadow-sm p-8">
               <h3 className="text-xl font-bold text-ink mb-5">What we cover</h3>
               <ul className="space-y-3 text-ink/80">

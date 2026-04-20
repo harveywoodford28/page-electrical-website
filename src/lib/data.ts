@@ -126,6 +126,73 @@ export const trustPoints = [
   { label: '5.0 Google Rating', icon: 'Star' },
 ];
 
+// Hampshire/Solent service towns — used by <HampshireCoverageMap />
+// Each with rough SVG coordinates (viewBox 0 0 800 500) — approximate, not OS-accurate
+export const serviceTowns = [
+  { slug: 'gosport', name: 'Gosport', x: 375, y: 335, primary: true },
+  { slug: 'fareham', name: 'Fareham', x: 395, y: 275, primary: true },
+  { slug: 'portsmouth', name: 'Portsmouth', x: 455, y: 335, primary: true },
+  { slug: 'southampton', name: 'Southampton', x: 245, y: 250, primary: true },
+  { slug: 'havant', name: 'Havant', x: 545, y: 290, primary: false },
+  { slug: 'hayling-island', name: 'Hayling Island', x: 555, y: 355, primary: false },
+  { slug: 'lee-on-solent', name: 'Lee-on-Solent', x: 340, y: 360, primary: false },
+  { slug: 'stubbington', name: 'Stubbington', x: 355, y: 305, primary: false },
+  { slug: 'southsea', name: 'Southsea', x: 470, y: 370, primary: false },
+];
+
+// Before/after slider examples — homepage "Our Work" section
+// TODO FROM MATT: Replace placeholder image pairs with real before/after photos (same angle, same crop).
+// For each item, `before` shows pre-work and `after` shows completed install.
+export const beforeAfterExamples = [
+  {
+    before: '/images/service-repairs.jpg',
+    after: '/images/service-installations.jpg',
+    label: 'Consumer unit upgrade',
+    town: 'Gosport',
+  },
+  {
+    before: '/images/service-maintenance.jpg',
+    after: '/images/hero-1.jpg',
+    label: 'Full rewire + finish',
+    town: 'Portsmouth',
+  },
+  {
+    before: '/images/hero-2.jpg',
+    after: '/images/service-installations.jpg',
+    label: 'EV charger install',
+    town: 'Fareham',
+  },
+];
+
+// Recently completed jobs ticker — homepage strip
+// TODO FROM MATT: Update monthly with real jobs — keep 6-10 entries, remove oldest first.
+export const recentCompletions = [
+  { service: 'EV charger install', town: 'Gosport', when: '2 days ago' },
+  { service: 'Full rewire', town: 'Portsmouth', when: 'last week' },
+  { service: 'AC service', town: 'Fareham', when: '3 days ago' },
+  { service: 'Fuse board upgrade', town: 'Southampton', when: '5 days ago' },
+  { service: 'EICR + remedials', town: 'Havant', when: 'last week' },
+  { service: 'Commercial fit-out', town: 'Southsea', when: '2 weeks ago' },
+  { service: 'Split AC install', town: 'Lee-on-Solent', when: '4 days ago' },
+  { service: 'Emergency fault find', town: 'Stubbington', when: 'yesterday' },
+];
+
+// Certification badge registry — used by <CertificationStrip />
+// Each badge is rendered as a commented-out placeholder until Matt confirms.
+// When Matt confirms, un-set `pending` to false and swap in the real badge image.
+export const certificationBadges = [
+  { id: 'niceic', label: 'NICEIC Approved', pending: true, scope: 'all' },
+  { id: 'part-p', label: 'Part P Registered', pending: true, scope: 'all' },
+  { id: '18th-edition', label: '18th Edition Qualified', pending: true, scope: 'all' },
+  { id: 'insurance', label: 'Public Liability Insured', pending: true, scope: 'all' },
+  { id: 'checkatrade', label: 'Checkatrade Verified', pending: true, scope: 'all' },
+  { id: 'f-gas', label: 'F-Gas Registered', pending: true, scope: 'air-conditioning' },
+  { id: 'ozev', label: 'OZEV Approved Installer', pending: true, scope: 'ev-chargers' },
+  { id: 'mcs', label: 'MCS Certified Partner', pending: true, scope: 'solar' },
+  { id: 'fmb', label: 'FMB Member', pending: true, scope: 'building' },
+  { id: 'trustmark', label: 'TrustMark Registered', pending: true, scope: 'building' },
+];
+
 export const values = [
   {
     title: 'Honest',
@@ -263,6 +330,7 @@ export const navigation = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
+  { href: '/areas', label: 'Areas' },
   { href: '/reviews', label: 'Reviews' },
   { href: '/faq', label: 'FAQ' },
   { href: '/contact', label: 'Contact' },

@@ -16,6 +16,8 @@ type Props = {
   whyUs: string[];
   process: { title: string; body: string }[];
   faqs: { q: string; a: string }[];
+  /** Optional seasonal / closing note displayed above the CTA band */
+  seasonalNote?: string;
 };
 
 export default function ServiceDetail({
@@ -28,6 +30,7 @@ export default function ServiceDetail({
   whyUs,
   process,
   faqs,
+  seasonalNote,
 }: Props) {
   return (
     <>
@@ -186,6 +189,24 @@ export default function ServiceDetail({
           </div>
         </section>
       )}
+
+      {seasonalNote && (
+        <section className="bg-brand/10 border-y border-brand/20">
+          <div className="container-x py-6 flex items-center justify-center text-center">
+            <p className="text-sm md:text-base font-semibold text-brand-dark">
+              {seasonalNote}
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* Per-service before/after slider example — enable once Matt provides matched photos
+          <BeforeAfterSlider
+            before="/images/placeholder-before.jpg"
+            after="/images/placeholder-after.jpg"
+            label={title}
+          />
+      */}
 
       <CTABand />
     </>

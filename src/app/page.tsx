@@ -7,10 +7,14 @@ import ServiceCard from '@/components/ServiceCard';
 import FAQAccordion from '@/components/FAQAccordion';
 import CTABand from '@/components/CTABand';
 import TrustStrip from '@/components/TrustStrip';
-import ReviewCarousel from '@/components/ReviewCarousel';
-import { reviews, services, faqs, siteConfig, recentProjects } from '@/lib/data';
+import CertificationStrip from '@/components/CertificationStrip';
+import HampshireCoverageMap from '@/components/HampshireCoverageMap';
+import BeforeAfterSlider from '@/components/BeforeAfterSlider';
+import RecentlyCompleted from '@/components/RecentlyCompleted';
+import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
+import ResponseBanner from '@/components/ResponseBanner';
+import { reviews, services, faqs, siteConfig, beforeAfterExamples } from '@/lib/data';
 
-const featuredReviews = [reviews[0], reviews[1], reviews[6], reviews[3], reviews[11]];
 const topFaqs = faqs.slice(0, 3);
 
 const localBusinessSchema = {
@@ -50,11 +54,13 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
+      <ResponseBanner />
       <Hero />
 
       <TrustStrip />
+      <CertificationStrip />
 
-      {/* SERVICES — moved high per Matt's feedback */}
+      {/* SERVICES */}
       <section className="container-x py-20 md:py-28">
         <Reveal className="max-w-2xl mb-14">
           <p className="eyebrow mb-3">What we do</p>
@@ -78,6 +84,55 @@ export default function HomePage() {
             See all services <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
           </Link>
         </Reveal>
+      </section>
+
+      {/* COVERAGE MAP */}
+      <section className="bg-mist py-20 md:py-24">
+        <div className="container-x">
+          <Reveal className="max-w-2xl mb-12">
+            <p className="eyebrow mb-3">Where we work</p>
+            <h2 className="h-display text-3xl md:text-5xl leading-[1.05] underline-grow">
+              Serving Hampshire &amp; the Solent.
+            </h2>
+            <p className="mt-8 text-lg text-muted leading-relaxed max-w-prose">
+              Gosport, Portsmouth, Fareham, Southampton, Havant and surrounding towns — hover a
+              marker for coverage detail.
+            </p>
+          </Reveal>
+          <HampshireCoverageMap />
+          <Reveal delay={0.15} className="mt-10 text-center">
+            <Link href="/areas" className="btn-outline">
+              Areas we serve <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* OUR WORK — before/after */}
+      <section className="container-x py-20 md:py-28">
+        <Reveal className="max-w-2xl mb-12">
+          <p className="eyebrow mb-3">Our work</p>
+          <h2 className="h-display text-3xl md:text-5xl leading-[1.05] underline-grow">
+            Before and after — the work in detail.
+          </h2>
+          <p className="mt-8 text-lg text-muted leading-relaxed max-w-prose">
+            Drag the handle to reveal the finish. Real jobs from across Hampshire.
+          </p>
+        </Reveal>
+
+        <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {beforeAfterExamples.map((b, i) => (
+            <Reveal key={i} delay={i * 0.08}>
+              <BeforeAfterSlider
+                before={b.before}
+                after={b.after}
+                label={b.label}
+                town={b.town}
+                placeholder
+              />
+            </Reveal>
+          ))}
+        </div>
       </section>
 
       {/* TRUST / ABOUT PREVIEW */}
@@ -152,62 +207,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FEATURED REVIEWS — carousel */}
+      {/* RECENTLY COMPLETED TICKER */}
+      <RecentlyCompleted />
+
+      {/* REVIEWS — Google widget */}
       <section className="container-x py-20 md:py-28">
-        <Reveal className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
-          <div className="max-w-2xl">
-            <p className="eyebrow mb-3">Customers say</p>
-            <h2 className="h-display text-3xl md:text-5xl leading-[1.05] underline-grow">
-              Trusted by Hampshire homes and businesses.
-            </h2>
-          </div>
-          <Link href="/reviews" className="btn-outline shrink-0">
-            Read all reviews <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
-          </Link>
+        <Reveal className="max-w-2xl mb-10">
+          <p className="eyebrow mb-3">Customers say</p>
+          <h2 className="h-display text-3xl md:text-5xl leading-[1.05] underline-grow">
+            Trusted by Hampshire homes and businesses.
+          </h2>
         </Reveal>
 
         <Reveal delay={0.1}>
-          <ReviewCarousel reviews={featuredReviews} />
+          <GoogleReviewsWidget reviews={reviews} rating={5} count={12} />
+        </Reveal>
+
+        <Reveal delay={0.2} className="mt-10 text-center">
+          <Link href="/reviews" className="btn-outline">
+            Read all reviews <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
+          </Link>
         </Reveal>
       </section>
 
-      {/* RECENT PROJECTS */}
-      <section className="bg-mist py-20 md:py-28">
-        <div className="container-x">
-          <Reveal className="max-w-2xl mb-12">
-            <p className="eyebrow mb-3">Recent projects</p>
-            <h2 className="h-display text-3xl md:text-5xl leading-[1.05] underline-grow">
-              A snapshot of recent work.
-            </h2>
-            <p className="mt-8 text-lg text-muted leading-relaxed">
-              Rewires, EV chargers, AC installs, commercial M&amp;E — across Hampshire.
-            </p>
-          </Reveal>
-
-          <div className="grid gap-3 md:gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
-            {recentProjects.map((p, i) => (
-              <Reveal key={p.src + i} delay={i * 0.06}>
-                <div className="group relative aspect-square rounded-xl overflow-hidden shadow-sm">
-                  <Image
-                    src={p.src}
-                    alt={p.label}
-                    fill
-                    sizes="(max-width: 768px) 50vw, 16vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-2 left-2 right-2 text-white text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {p.label}
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* FAQ TEASER */}
-      <section className="py-20 md:py-28">
+      <section className="bg-mist py-20 md:py-28">
         <div className="container-x grid gap-12 lg:grid-cols-12">
           <Reveal className="lg:col-span-4">
             <p className="eyebrow mb-3">Questions</p>
