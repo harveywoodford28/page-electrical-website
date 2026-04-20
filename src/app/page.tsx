@@ -9,7 +9,6 @@ import CTABand from '@/components/CTABand';
 import TrustStrip from '@/components/TrustStrip';
 import CertificationStrip from '@/components/CertificationStrip';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
-import RecentlyCompleted from '@/components/RecentlyCompleted';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
 import { reviews, services, faqs, siteConfig, beforeAfterExamples } from '@/lib/data';
 
@@ -183,7 +182,6 @@ export default function HomePage() {
       </section>
 
       {/* RECENTLY COMPLETED TICKER */}
-      <RecentlyCompleted />
 
       {/* REVIEWS — Google widget */}
       <section className="container-x py-20 md:py-28">
