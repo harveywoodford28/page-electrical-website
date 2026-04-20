@@ -69,9 +69,8 @@ export default function GoogleReviewsWidget({ reviews, rating = 5, count }: Prop
           {reviews.map((r, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={false}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: i * 0.04 }}
               className="snap-start shrink-0 w-[85%] sm:w-[48%] lg:w-[32%] rounded-2xl bg-white border border-ink/5 shadow-sm p-6 flex flex-col"
             >

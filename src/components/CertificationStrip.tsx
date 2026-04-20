@@ -44,9 +44,8 @@ export default function CertificationStrip({ scope = 'all' }: Props) {
           {visible.map((b, i) => (
             <motion.div
               key={b.id}
-              initial={{ opacity: 0, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={false}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: i * 0.04 }}
               className={`group flex items-center gap-2 rounded-full border px-4 py-2 transition-all duration-300 ${
                 b.pending

@@ -11,9 +11,8 @@ export default function TrustStrip() {
         {trustPoints.map((t, i) => (
           <motion.div
             key={t.label}
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            initial={false}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
             className="flex items-center gap-3 justify-center md:justify-start"
           >
