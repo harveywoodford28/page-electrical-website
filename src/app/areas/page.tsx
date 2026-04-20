@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, MapPin } from 'lucide-react';
 import Reveal from '@/components/Reveal';
-import HampshireCoverageMap from '@/components/HampshireCoverageMap';
 import CTABand from '@/components/CTABand';
 
 export const metadata: Metadata = {
@@ -108,19 +107,6 @@ export default function AreasIndex() {
               </Link>
             </Reveal>
           ))}
-        </div>
-      </section>
-
-      {/* Map */}
-      <section className="bg-mist py-20 md:py-24">
-        <div className="container-x">
-          <Reveal className="max-w-2xl mb-10">
-            <p className="eyebrow mb-3">Full coverage</p>
-            <h2 className="h-display text-3xl md:text-4xl leading-[1.1] underline-grow">
-              Hampshire &amp; the Solent.
-            </h2>
-          </Reveal>
-          <HampshireCoverageMap />
         </div>
       </section>
 

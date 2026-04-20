@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { Phone, Mail, MapPin, Clock, Facebook } from 'lucide-react';
 import Reveal from '@/components/Reveal';
 import ContactForm from '@/components/ContactForm';
-import HampshireCoverageMap from '@/components/HampshireCoverageMap';
 import { siteConfig } from '@/lib/data';
 
 export const metadata: Metadata = {
@@ -122,20 +121,6 @@ export default function ContactPage() {
         </Reveal>
       </section>
 
-      {/* Coverage strip */}
-      <section className="bg-mist py-16 md:py-20">
-        <div className="container-x">
-          <Reveal className="max-w-2xl mb-10">
-            <p className="eyebrow mb-3">Where we work</p>
-            <h2 className="h-display text-3xl md:text-4xl leading-[1.1] underline-grow">
-              Hampshire &amp; the Solent.
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <HampshireCoverageMap />
-          </Reveal>
-        </div>
-      </section>
     </>
   );
 }

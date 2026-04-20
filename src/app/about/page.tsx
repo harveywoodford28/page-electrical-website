@@ -5,7 +5,6 @@ import { CheckCircle2, ArrowRight, MapPin } from 'lucide-react';
 import Reveal from '@/components/Reveal';
 import CTABand from '@/components/CTABand';
 import ServiceIcon from '@/components/ServiceIcon';
-import HampshireCoverageMap from '@/components/HampshireCoverageMap';
 import { siteConfig, values } from '@/lib/data';
 
 export const metadata: Metadata = {
@@ -248,10 +247,6 @@ export default function AboutPage() {
               travel further — just ask.
             </p>
           </Reveal>
-          <Reveal delay={0.1}>
-            <HampshireCoverageMap />
-          </Reveal>
-
           <Reveal delay={0.2} className="mt-10 grid gap-12 lg:grid-cols-2 items-start">
             <div className="flex flex-wrap gap-3">
               {siteConfig.cities.map((c) => (
