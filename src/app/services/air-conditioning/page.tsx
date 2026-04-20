@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import ServiceDetail from '@/components/ServiceDetail';
+import { services } from '@/lib/data';
+
+const svc = services.find((s) => s.slug === 'air-conditioning')!;
 
 export const metadata: Metadata = {
   title: 'Air Conditioning Installation in Hampshire',
@@ -10,11 +13,12 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <ServiceDetail
-      icon="Snowflake"
+      icon={svc.icon}
       eyebrow="Air Conditioning"
       title="Air conditioning installation and maintenance."
       intro="Keep your home, shop or office comfortable year-round. We supply, install, service and repair split and multi-split AC systems across Hampshire."
-      image="/images/service-repairs.jpg"
+      image={svc.image}
+      gallery={svc.gallery}
       whyUs={[
         'Domestic and commercial installs',
         'Right-sized systems — no oversell',
@@ -42,7 +46,7 @@ export default function Page() {
           a: 'Usually yes. We work around existing structures to keep install mess to a minimum and hide cabling where we can.',
         },
         {
-          q: 'Do you service AC units you didn\'t install?',
+          q: "Do you service AC units you didn't install?",
           a: 'Yes. We happily service and repair existing systems from any installer.',
         },
         {

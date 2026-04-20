@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
+import { Phone, Mail, MapPin, Clock, Facebook } from 'lucide-react';
 import Reveal from '@/components/Reveal';
 import ContactForm from '@/components/ContactForm';
 import { siteConfig } from '@/lib/data';
@@ -12,66 +14,103 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="hero-gradient text-white pt-40 pb-24 relative">
-        <div aria-hidden className="absolute inset-0 grain opacity-[0.15]" />
-        <div className="container-x relative max-w-3xl">
+      <section className="relative isolate overflow-hidden text-white min-h-[50vh] flex items-end">
+        <div className="absolute inset-0 -z-10">
+          <div className="ken-burns h-full w-full">
+            <Image
+              src="/images/hero-2.jpg"
+              alt="Contact Page Electrical"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
+          <div aria-hidden className="absolute inset-0 hero-overlay" />
+          <div aria-hidden className="absolute inset-0 grain opacity-[0.15]" />
+        </div>
+        <div className="container-x relative pt-40 pb-16 lg:pt-48 lg:pb-20 max-w-3xl w-full">
           <Reveal>
-            <p className="eyebrow !text-accent mb-6">Contact</p>
+            <p className="eyebrow !text-brand-light mb-6">Contact</p>
             <h1 className="font-display text-4xl md:text-6xl font-bold leading-[1.05]">
               Get a quote. We reply fast.
             </h1>
-            <p className="mt-6 text-lg text-white/80 leading-relaxed">
-              Call, email or fill the form. For emergencies, phone is fastest —
-              most call-outs across Hampshire are same-day or next morning.
+            <p className="mt-6 text-lg md:text-xl text-white/85 leading-relaxed">
+              Call, email or fill the form. For emergencies, phone is fastest — most call-outs
+              across Hampshire are same-day or next morning.
             </p>
           </Reveal>
         </div>
       </section>
 
       <section className="container-x py-20 md:py-28 grid gap-12 lg:grid-cols-12">
-        <Reveal className="lg:col-span-5 space-y-8">
-          <div>
-            <p className="eyebrow mb-2">Call us</p>
-            <a
-              href={siteConfig.phoneHref}
-              className="text-2xl md:text-3xl font-bold text-navy hover:text-accent-dark transition-colors"
-            >
-              {siteConfig.phone}
-            </a>
-            <p className="mt-2 text-sm text-navy/60">{siteConfig.workingHours}</p>
+        <Reveal className="lg:col-span-5 space-y-7">
+          <div className="flex items-start gap-4">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-brand">
+              <Phone className="h-5 w-5" strokeWidth={2} />
+            </span>
+            <div>
+              <p className="eyebrow mb-1">Call us</p>
+              <a
+                href={siteConfig.phoneHref}
+                className="block text-2xl md:text-3xl font-bold text-ink hover:text-brand-dark transition-colors"
+              >
+                {siteConfig.phone}
+              </a>
+              <p className="mt-1 text-sm text-muted">{siteConfig.workingHours}</p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-brand">
+              <Mail className="h-5 w-5" strokeWidth={2} />
+            </span>
+            <div>
+              <p className="eyebrow mb-1">Email</p>
+              <a
+                href={siteConfig.emailHref}
+                className="text-xl font-semibold text-ink hover:text-brand-dark transition-colors break-all"
+              >
+                {siteConfig.email}
+              </a>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-brand">
+              <MapPin className="h-5 w-5" strokeWidth={2} />
+            </span>
+            <div>
+              <p className="eyebrow mb-1">Service area</p>
+              <p className="text-ink/80 leading-relaxed">
+                Gosport, Portsmouth, Fareham, Southampton, Havant, Hayling Island, Lee-on-Solent
+                and the wider Hampshire area.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-4">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-brand">
+              <Clock className="h-5 w-5" strokeWidth={2} />
+            </span>
+            <div>
+              <p className="eyebrow mb-1">Hours</p>
+              <p className="text-ink/80">{siteConfig.workingHours}</p>
+              <p className="text-sm text-muted mt-1">Emergency call-outs outside hours — call.</p>
+            </div>
           </div>
 
           <div>
-            <p className="eyebrow mb-2">Email</p>
-            <a
-              href={siteConfig.emailHref}
-              className="text-xl font-semibold text-navy hover:text-accent-dark transition-colors break-all"
-            >
-              {siteConfig.email}
-            </a>
-          </div>
-
-          <div>
-            <p className="eyebrow mb-2">Service area</p>
-            <p className="text-navy/80">
-              Gosport, Portsmouth, Fareham, Southampton, Havant and the wider
-              Hampshire area.
-            </p>
-          </div>
-
-          <div>
-            <p className="eyebrow mb-2">Follow us</p>
+            <p className="eyebrow mb-3">Follow us</p>
             <div className="flex gap-3">
               <a
                 href={siteConfig.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/5 hover:bg-accent transition-colors"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-ink/5 hover:bg-brand hover:text-white transition-colors"
                 aria-label="Facebook"
               >
-                <svg className="h-4 w-4 text-navy" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.51 1.49-3.9 3.78-3.9 1.1 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0022 12z" />
-                </svg>
+                <Facebook className="h-4 w-4" strokeWidth={2} />
               </a>
             </div>
           </div>

@@ -9,15 +9,30 @@ export const siteConfig = {
   email: 'info@page-electrical.co.uk',
   emailHref: 'mailto:info@page-electrical.co.uk',
   serviceArea: 'Hampshire',
-  cities: ['Gosport', 'Portsmouth', 'Fareham', 'Southampton', 'Havant'],
+  cities: ['Gosport', 'Portsmouth', 'Fareham', 'Southampton', 'Havant', 'Hayling Island', 'Lee-on-Solent'],
   workingHours: 'Mon-Sat, 8:00am - 6:00pm',
   yearsExperience: '30+',
-  facebook:
-    'https://www.facebook.com/profile.php?id=100090597909548',
+  facebook: 'https://www.facebook.com/profile.php?id=100090597909548',
   instagram: 'https://www.instagram.com/',
   googleReviewUrl:
     'https://www.google.com/search?q=page+electrical+installations&rlz=1C5GCEM_enGB1115GB1117&oq=page&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGDkyBggCEEUYQDIKCAMQABixAxiABDIGCAQQRRg8MgYIBRBFGDwyBggGEEUYPDIGCAcQRRg80gEIMTIyNWowajSoAgCwAgE&sourceid=chrome&ie=UTF-8#lrd=0x487467a24b77b8c7:0x409c1c72965f5b16,3,,,,',
 };
+
+// Image library — every image we have available
+export const imageLibrary = [
+  '/images/hero-1.jpg',
+  '/images/hero-2.jpg',
+  '/images/about-hero.jpg',
+  '/images/about-team.jpg',
+  '/images/service-installations.jpg',
+  '/images/service-repairs.jpg',
+  '/images/service-maintenance.jpg',
+  '/images/reviews-hero.jpg',
+  '/images/faq-image.jpg',
+  '/images/matt-page.jpg',
+  '/images/team-2.png',
+  '/images/team-3.png',
+] as const;
 
 export const services = [
   {
@@ -26,8 +41,13 @@ export const services = [
     short: 'Installations, repairs and rewires for homes and businesses.',
     description:
       'Full electrical installations, fault-finding, rewires, fuseboard upgrades, inspections and certification. Domestic, commercial and industrial work across Hampshire.',
-    icon: 'Bolt',
+    icon: 'Zap',
     image: '/images/service-installations.jpg',
+    gallery: [
+      '/images/service-installations.jpg',
+      '/images/hero-1.jpg',
+      '/images/about-team.jpg',
+    ],
   },
   {
     slug: 'air-conditioning',
@@ -37,6 +57,11 @@ export const services = [
       'Split-system and multi-split air conditioning installation, servicing and repair. Keep homes, shops and offices comfortable year-round.',
     icon: 'Snowflake',
     image: '/images/service-repairs.jpg',
+    gallery: [
+      '/images/service-repairs.jpg',
+      '/images/service-maintenance.jpg',
+      '/images/hero-2.jpg',
+    ],
   },
   {
     slug: 'building',
@@ -44,8 +69,13 @@ export const services = [
     short: 'Complete mechanical and electrical installations for new builds and refurbs.',
     description:
       'End-to-end M&E for extensions, refurbishments and light commercial fit-outs. Coordinated with other trades and delivered on programme.',
-    icon: 'Home',
+    icon: 'Building2',
     image: '/images/service-maintenance.jpg',
+    gallery: [
+      '/images/service-maintenance.jpg',
+      '/images/about-hero.jpg',
+      '/images/hero-1.jpg',
+    ],
   },
   {
     slug: 'solar',
@@ -55,6 +85,11 @@ export const services = [
       'Solar panel design and installation, battery storage, and grid-tied systems. Help home and business owners take control of rising energy costs.',
     icon: 'Sun',
     image: '/images/hero-1.jpg',
+    gallery: [
+      '/images/hero-1.jpg',
+      '/images/about-hero.jpg',
+      '/images/reviews-hero.jpg',
+    ],
   },
   {
     slug: 'ev-chargers',
@@ -62,12 +97,57 @@ export const services = [
     short: 'Domestic and commercial EV charge point installation.',
     description:
       'OZEV-approved EV charge point installation for homes and workplaces. Tidy cabling, fast turnaround and clear advice on the right charger for you.',
-    icon: 'Plug',
+    icon: 'PlugZap',
     image: '/images/hero-2.jpg',
+    gallery: [
+      '/images/hero-2.jpg',
+      '/images/service-repairs.jpg',
+      '/images/faq-image.jpg',
+    ],
   },
 ] as const;
 
 export type ServiceSlug = (typeof services)[number]['slug'];
+
+// Recent projects thumbnails — 6 pics for the homepage strip
+export const recentProjects = [
+  { src: '/images/hero-1.jpg', label: 'Full rewire' },
+  { src: '/images/service-installations.jpg', label: 'Fuse board upgrade' },
+  { src: '/images/service-repairs.jpg', label: 'AC install' },
+  { src: '/images/hero-2.jpg', label: 'EV charger' },
+  { src: '/images/service-maintenance.jpg', label: 'Commercial M&E' },
+  { src: '/images/about-team.jpg', label: 'Light industrial' },
+];
+
+export const trustPoints = [
+  { label: '30+ Years in Hampshire', icon: 'Award' },
+  { label: 'Certified to BS 7671', icon: 'ShieldCheck' },
+  { label: 'Local Family Business', icon: 'Home' },
+  { label: '5.0 Google Rating', icon: 'Star' },
+];
+
+export const values = [
+  {
+    title: 'Honest',
+    body: 'No upsells, no hidden fees, no scope creep. If we quote it, that is what you pay.',
+    icon: 'Handshake',
+  },
+  {
+    title: 'Tidy',
+    body: 'Minimal plaster damage, hidden cabling where possible, cleaned up after every visit.',
+    icon: 'Sparkles',
+  },
+  {
+    title: 'On time',
+    body: 'We turn up when we say we will. Timelines are agreed upfront and stuck to.',
+    icon: 'Clock',
+  },
+  {
+    title: 'Certified',
+    body: 'All notifiable work is registered and signed off properly, with paperwork you can keep.',
+    icon: 'BadgeCheck',
+  },
+];
 
 export const reviews = [
   {
@@ -102,7 +182,7 @@ export const reviews = [
   },
   {
     quote:
-      'Contacted Matt regarding an EV charge point I urgently needed installing. He bent over backwards to fit me in. The actual install has been done to a top level. All cabling housed away and all tidy. He even went the extra mile and hoovered and tidied up after himself! Couldn’t recommend him enough. One happy customer thank you.',
+      'Contacted Matt regarding an EV charge point I urgently needed installing. He bent over backwards to fit me in. The actual install has been done to a top level. All cabling housed away and all tidy. He even went the extra mile and hoovered and tidied up after himself! Couldn\u2019t recommend him enough. One happy customer thank you.',
     context: 'EV charger install',
   },
   {

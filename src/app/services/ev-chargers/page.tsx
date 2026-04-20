@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import ServiceDetail from '@/components/ServiceDetail';
+import { services } from '@/lib/data';
+
+const svc = services.find((s) => s.slug === 'ev-chargers')!;
 
 export const metadata: Metadata = {
   title: 'EV Charger Installation in Hampshire',
@@ -10,11 +13,12 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <ServiceDetail
-      icon="Plug"
+      icon={svc.icon}
       eyebrow="EV Chargers"
       title="EV charge point installation — home and workplace."
       intro="OZEV-approved EV charger installation for homes and workplaces across Hampshire. Tidy cabling, fast turnaround, and clear advice on the right charger for your car and usage."
-      image="/images/hero-2.jpg"
+      image={svc.image}
+      gallery={svc.gallery}
       whyUs={[
         'OZEV-approved installer',
         'Single and multi-vehicle setups',
@@ -39,11 +43,11 @@ export default function Page() {
       faqs={[
         {
           q: 'Do I need a fuse board upgrade for an EV charger?',
-          a: 'Sometimes — it depends on your existing board and load. We\'ll check and tell you before you commit.',
+          a: "Sometimes — it depends on your existing board and load. We'll check and tell you before you commit.",
         },
         {
           q: 'How long does a home install take?',
-          a: 'Most home EV installs are done in half a day. We\'ll tidy up and run you through how it works before we leave.',
+          a: "Most home EV installs are done in half a day. We'll tidy up and run you through how it works before we leave.",
         },
         {
           q: 'Do you install workplace chargers?',

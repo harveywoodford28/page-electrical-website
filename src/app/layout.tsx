@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
+import BackToTop from '@/components/BackToTop';
 import { siteConfig } from '@/lib/data';
 
 export const metadata: Metadata = {
@@ -11,21 +12,35 @@ export const metadata: Metadata = {
     template: '%s | Page Electrical',
   },
   description: siteConfig.description,
+  icons: {
+    icon: '/brand/logo.png',
+    apple: '/brand/logo.png',
+  },
   openGraph: {
     title: 'Page Electrical — Reliable Electrical Services in Hampshire',
     description: siteConfig.description,
     type: 'website',
     locale: 'en_GB',
     siteName: siteConfig.fullName,
+    images: [
+      {
+        url: '/brand/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Page Electrical Services',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Page Electrical — Reliable Electrical Services in Hampshire',
+    description: siteConfig.description,
+    images: ['/brand/logo.png'],
   },
   robots: { index: true, follow: true },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
@@ -44,6 +59,7 @@ export default function RootLayout({
         <Nav />
         <main>{children}</main>
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );

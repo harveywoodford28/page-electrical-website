@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import ServiceDetail from '@/components/ServiceDetail';
+import { services } from '@/lib/data';
+
+const svc = services.find((s) => s.slug === 'solar')!;
 
 export const metadata: Metadata = {
   title: 'Solar Panel & Battery Installation in Hampshire',
@@ -10,11 +13,12 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <ServiceDetail
-      icon="Sun"
+      icon={svc.icon}
       eyebrow="Solar & Battery"
       title="Solar PV and battery storage, installed properly."
       intro="We design, supply and install solar PV and battery storage for homes and businesses across Hampshire. Cut your energy bills and take back control of rising costs."
-      image="/images/hero-1.jpg"
+      image={svc.image}
+      gallery={svc.gallery}
       whyUs={[
         'Bespoke system design for your roof and usage',
         'Battery storage to get the most out of your panels',
@@ -43,7 +47,7 @@ export default function Page() {
         },
         {
           q: 'Do I need a battery?',
-          a: 'Not always — it depends on when you use electricity. We\'ll explain the trade-off clearly so you can make the call.',
+          a: "Not always — it depends on when you use electricity. We'll explain the trade-off clearly so you can make the call.",
         },
         {
           q: 'Do you install for commercial properties?',

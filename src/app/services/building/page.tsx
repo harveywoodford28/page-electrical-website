@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import ServiceDetail from '@/components/ServiceDetail';
+import { services } from '@/lib/data';
+
+const svc = services.find((s) => s.slug === 'building')!;
 
 export const metadata: Metadata = {
   title: 'Building Services (M&E) in Hampshire',
@@ -10,11 +13,12 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <ServiceDetail
-      icon="Home"
+      icon={svc.icon}
       eyebrow="Building Services"
       title="Complete M&E for new builds and refurbs."
       intro="End-to-end mechanical and electrical installations for extensions, refurbishments and light commercial fit-outs. Coordinated with other trades and delivered on programme."
-      image="/images/service-maintenance.jpg"
+      image={svc.image}
+      gallery={svc.gallery}
       whyUs={[
         'Full first-fix and second-fix electrical',
         'AC, heating and ventilation coordination',
@@ -47,7 +51,7 @@ export default function Page() {
         },
         {
           q: 'Do you cover heating and AC in a single package?',
-          a: 'Yes — we can package electrical and AC together so you\'ve got one team and one point of contact.',
+          a: "Yes — we can package electrical and AC together so you've got one team and one point of contact.",
         },
       ]}
     />

@@ -14,19 +14,31 @@ export const metadata: Metadata = {
 export default function ReviewsPage() {
   return (
     <>
-      <section className="hero-gradient text-white pt-40 pb-24 relative">
-        <div aria-hidden className="absolute inset-0 grain opacity-[0.15]" />
-        <div className="container-x relative grid gap-12 lg:grid-cols-12 items-center">
-          <div className="lg:col-span-7">
+      <section className="relative isolate overflow-hidden text-white min-h-[60vh] flex items-end">
+        <div className="absolute inset-0 -z-10">
+          <div className="ken-burns h-full w-full">
+            <Image
+              src="/images/reviews-hero.jpg"
+              alt="Page Electrical customer reviews"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
+          <div aria-hidden className="absolute inset-0 hero-overlay" />
+          <div aria-hidden className="absolute inset-0 grain opacity-[0.15]" />
+        </div>
+        <div className="container-x relative pt-40 pb-16 lg:pt-48 lg:pb-20 w-full">
+          <div className="max-w-3xl">
             <Reveal>
-              <p className="eyebrow !text-accent mb-6">Reviews</p>
+              <p className="eyebrow !text-brand-light mb-6">Reviews</p>
               <h1 className="font-display text-4xl md:text-6xl font-bold leading-[1.05]">
-                What our customers say about us.
+                What our customers say.
               </h1>
-              <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-xl">
-                Twelve reviews from real Hampshire customers — rewires, EV
-                chargers, AC installs, emergency call-outs, and everything in
-                between.
+              <p className="mt-6 text-lg md:text-xl text-white/85 leading-relaxed max-w-2xl">
+                Twelve reviews from real Hampshire customers — rewires, EV chargers, AC installs,
+                emergency call-outs, and everything in between.
               </p>
             </Reveal>
             <Reveal delay={0.15}>
@@ -56,17 +68,6 @@ export default function ReviewsPage() {
               </div>
             </Reveal>
           </div>
-          <Reveal delay={0.25} className="lg:col-span-5">
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/10">
-              <Image
-                src="/images/reviews-hero.jpg"
-                alt="Page Electrical work"
-                fill
-                sizes="(max-width: 768px) 100vw, 40vw"
-                className="object-cover"
-              />
-            </div>
-          </Reveal>
         </div>
       </section>
 

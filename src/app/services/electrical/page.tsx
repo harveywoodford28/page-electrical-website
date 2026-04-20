@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import ServiceDetail from '@/components/ServiceDetail';
+import { services } from '@/lib/data';
+
+const svc = services.find((s) => s.slug === 'electrical')!;
 
 export const metadata: Metadata = {
   title: 'Electrical Installations & Repairs in Hampshire',
@@ -10,11 +13,12 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <ServiceDetail
-      icon="Bolt"
+      icon={svc.icon}
       eyebrow="Electrical"
       title="Electrical installations, repairs and rewires."
       intro="Domestic, commercial and industrial electrical work. From a faulty socket to a full rewire — tested, certified and signed off properly."
-      image="/images/service-installations.jpg"
+      image={svc.image}
+      gallery={svc.gallery}
       whyUs={[
         'Fully certified electricians working to BS 7671',
         'Tidy workmanship — minimal plaster damage, cleaned after',
