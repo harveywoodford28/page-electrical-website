@@ -1,0 +1,111 @@
+'use client';
+
+import { useState } from 'react';
+import { siteConfig, services } from '@/lib/data';
+
+// Using mailto as the launch default — swap the `action` to a Formspree endpoint
+// when Harvey wires that up. Mailto works on every device with zero config.
+export default function ContactForm() {
+  const [submitting, setSubmitting] = useState(false);
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitting(true);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const body = [
+      `Name: ${data.get('name')}`,
+      `Email: ${data.get('email')}`,
+      `Phone: ${data.get('phone')}`,
+      `Service: ${data.get('service')}`,
+      '',
+      'Message:',
+      `${data.get('message')}`,
+    ].join('\n');
+    const url = `mailto:${siteConfig.email}?subject=${encodeURIComponent(
+      `Quote request — ${data.get('service') ?? 'General'}`
+    )}&body=${encodeURIComponent(body)}`;
+    window.location.href = url;
+    setTimeout(() => setSubmitting(false), 1500);
+  };
+
+  return (
+    <form
+      onSubmit={onSubmit}
+      className="rounded-3xl bg-white border border-navy/5 shadow-sm p-8 md:p-10 space-y-5"
+    >
+      <div className="grid gap-5 sm:grid-cols-2">
+        <Field label="Full name" name="name" required />
+        <Field label="Phone" name="phone" type="tel" required />
+      </div>
+      <Field label="Email" name="email" type="email" required />
+      <div>
+        <label htmlFor="service" className="block text-sm font-semibold text-navy mb-2">
+          Service
+        </label>
+        <select
+          id="service"
+          name="service"
+          required
+          defaultValue=""
+          className="w-full rounded-xl border border-navy/10 bg-white px-4 py-3 text-navy focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition"
+        >
+          <option value="" disabled>
+            Select a service…
+          </option>
+          {services.map((s) => (
+            <option key={s.slug} value={s.title}>
+              {s.title}
+            </option>
+          ))}
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div>
+        <label htmlFor="message" className="block text-sm font-semibold text-navy mb-2">
+          How can we help?
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          rows={5}
+          required
+          className="w-full rounded-xl border border-navy/10 bg-white px-4 py-3 text-navy focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition"
+        />
+      </div>
+      <button type="submit" disabled={submitting} className="btn-primary w-full">
+        {submitting ? 'Opening email…' : 'Send enquiry'}
+      </button>
+      <p className="text-xs text-navy/60 text-center">
+        Prefer to call? {siteConfig.phone}. We aim to reply within 24 hours.
+      </p>
+    </form>
+  );
+}
+
+function Field({
+  label,
+  name,
+  type = 'text',
+  required = false,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+}) {
+  return (
+    <div>
+      <label htmlFor={name} className="block text-sm font-semibold text-navy mb-2">
+        {label}
+      </label>
+      <input
+        id={name}
+        name={name}
+        type={type}
+        required={required}
+        className="w-full rounded-xl border border-navy/10 bg-white px-4 py-3 text-navy focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition"
+      />
+    </div>
+  );
+}

@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #0a2540;
+  --navy-dark: #061829;
+  --accent: #f59e0b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #0a2540;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-navy shadow-lg shadow-accent/20 transition-all duration-300 hover:bg-accent-dark hover:shadow-xl hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/5 px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-white backdrop-blur transition-all duration-300 hover:bg-white hover:text-navy;
+  }
+
+  .btn-outline-navy {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-navy/20 bg-white px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-navy transition-all duration-300 hover:border-navy hover:bg-navy hover:text-white;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.25em] text-accent;
+  }
+
+  .h-display {
+    @apply font-display font-bold tracking-tight text-navy;
+  }
+}
+
+.grain {
+  background-image: radial-gradient(
+    rgba(10, 37, 64, 0.08) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+}
+
+.hero-gradient {
+  background:
+    radial-gradient(80% 60% at 10% 20%, rgba(245, 158, 11, 0.18) 0%, rgba(10, 37, 64, 0) 60%),
+    radial-gradient(60% 40% at 90% 80%, rgba(37, 99, 235, 0.15) 0%, rgba(10, 37, 64, 0) 60%),
+    linear-gradient(135deg, #0a2540 0%, #12355e 60%, #0a2540 100%);
+}
