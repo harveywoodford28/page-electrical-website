@@ -60,6 +60,17 @@ body {
 
   .h-display {
     @apply font-display font-bold tracking-tight text-ink;
+    text-wrap: balance;
+  }
+
+  /* Apply balanced wrapping to all h1/h2/h3 so orphaned words don't dangle */
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+
+  /* Paragraphs wrap with pretty (avoids widows) where supported */
+  p {
+    text-wrap: pretty;
   }
 
   .h-underline {

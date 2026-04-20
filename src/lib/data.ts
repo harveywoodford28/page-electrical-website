@@ -42,7 +42,8 @@ export const services = [
     description:
       'Full electrical installations, fault-finding, rewires, fuseboard upgrades, inspections and certification. Domestic, commercial and industrial work across Hampshire.',
     icon: 'Zap',
-    image: '/images/service-installations.jpg',
+    // Consistent icon-only card style on homepage. Detail page gallery still uses the photos below.
+    image: null,
     gallery: [
       '/images/service-installations.jpg',
       '/images/hero-1.jpg',
