@@ -97,9 +97,7 @@ export const services = [
     icon: 'Zap',
     image: '/images/service-repairs.jpg', // consumer unit close-up (about-hero is reserved for About page)
     gallery: [
-      '/images/service-repairs.jpg', // consumer unit close-up
-      '/images/raw-from-matt/electrical/consumer-unit-wide.jpg',
-      '/images/raw-from-matt/electrical/consumer-unit-closeup.jpg',
+      '/images/service-repairs.jpg', // consumer unit — only one needed
       '/images/raw-from-matt/electrical/carpark-lighting.jpg',
       '/images/raw-from-matt/bathroom-electrical/downlights-extractor.jpg',
       '/images/raw-from-matt/bathroom-electrical/led-mirror-marble.jpg',
