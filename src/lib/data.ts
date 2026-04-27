@@ -22,15 +22,12 @@ export const siteConfig = {
 // Real Page Electrical job photos are organised under /images/raw-from-matt/[category]/.
 export const imageLibrary = [
   // Hero candidates — premium quality
-  '/images/raw-from-matt/hero/staircase-lighting-1.jpg',
-  '/images/raw-from-matt/hero/luxury-kitchen.jpg',
   '/images/raw-from-matt/hero/commercial-ac-rooftop.jpg',
   '/images/raw-from-matt/hero/cyberster-showroom.jpg',
   '/images/raw-from-matt/hero/drone-solar-self-build.jpg',
   // Page Electrical brand
   '/images/raw-from-matt/page-electrical/van-multistorey.jpg',
   // Electrical
-  '/images/raw-from-matt/electrical/consumer-unit-closeup.jpg',
   '/images/raw-from-matt/electrical/carpark-lighting.jpg',
   '/images/raw-from-matt/electrical/residential-exterior.jpg',
   // Air conditioning
@@ -41,16 +38,12 @@ export const imageLibrary = [
   '/images/raw-from-matt/air-conditioning/outdoor-with-isolator.jpg',
   '/images/raw-from-matt/air-conditioning/mitsubishi-controller.jpg',
   '/images/raw-from-matt/air-conditioning/bms-ae200-controller.jpg',
-  '/images/raw-from-matt/air-conditioning/commercial-rooftop-alt.jpg',
   '/images/raw-from-matt/air-conditioning/multi-zone-outdoor.jpg',
   // EV chargers
   '/images/raw-from-matt/ev-chargers/brick-wall-charger.jpg',
-  '/images/raw-from-matt/ev-chargers/brick-wall-charger-alt.jpg',
   // Solar
   '/images/raw-from-matt/solar/residential-roof-install.jpg',
-  '/images/raw-from-matt/solar/drone-self-build-progress.jpg',
   // Building services
-  '/images/raw-from-matt/building-services/framing-mid-build.jpg',
   '/images/raw-from-matt/building-services/finished-partition.jpg',
   '/images/raw-from-matt/building-services/chery-bognor-regis.jpg',
   '/images/raw-from-matt/building-services/cyberster-display.jpg',
@@ -78,7 +71,6 @@ export const imageLibrary = [
   // Electrical
   '/images/raw-from-matt/electrical/consumer-unit-wide.jpg',
   // Lighting
-  '/images/raw-from-matt/lighting/staircase-from-above.jpg',
   '/images/raw-from-matt/lighting/chandelier-staircase-alt.jpg',
   '/images/raw-from-matt/lighting/garden-led-strip-dusk.jpg',
   // Existing assets
@@ -127,7 +119,6 @@ export const services = [
       '/images/raw-from-matt/air-conditioning/multi-zone-outdoor.jpg',
       '/images/raw-from-matt/air-conditioning/bms-ae200-controller.jpg',
       '/images/raw-from-matt/air-conditioning/mitsubishi-controller.jpg',
-      '/images/raw-from-matt/air-conditioning/commercial-rooftop-alt.jpg',
       '/images/raw-from-matt/air-conditioning/ceiling-cassette.jpg',
       '/images/raw-from-matt/hero/commercial-ac-rooftop.jpg',
     ],
@@ -142,7 +133,6 @@ export const services = [
     image: '/images/faq-image.jpg', // wood-frame ceiling with electrical wires hanging
     gallery: [
       '/images/faq-image.jpg', // building site — wires hanging through wood frame
-      '/images/raw-from-matt/building-services/framing-mid-build.jpg',
       '/images/raw-from-matt/self-build/01-timber-frame.jpg',
       '/images/raw-from-matt/self-build/02-drone-solar-progress.jpg',
       '/images/raw-from-matt/self-build/03-resin-driveway-finished.jpg',
@@ -174,7 +164,6 @@ export const services = [
     gallery: [
       '/images/raw-from-matt/solar/residential-roof-install.jpg',
       '/images/raw-from-matt/hero/drone-solar-self-build.jpg',
-      '/images/raw-from-matt/solar/drone-self-build-progress.jpg',
       '/images/raw-from-matt/self-build/02-drone-solar-progress.jpg',
     ],
   },
@@ -188,7 +177,6 @@ export const services = [
     image: '/images/raw-from-matt/ev-chargers/brick-wall-charger.jpg',
     gallery: [
       '/images/raw-from-matt/ev-chargers/brick-wall-charger.jpg',
-      '/images/raw-from-matt/ev-chargers/brick-wall-charger-alt.jpg',
     ],
   },
 ] as const;
@@ -226,65 +214,15 @@ export const serviceTowns = [
   { slug: 'southsea', name: 'Southsea', x: 470, y: 370, primary: false },
 ];
 
-// Before/after slider examples — homepage "Our Work" section.
-// Two real multi-stage progressions delivered by Page.
+// Before/after slider examples — currently empty.
+// Photos are surfaced in their natural service galleries instead until we have
+// true matched-angle pairs (same camera position before vs after).
 export const beforeAfterExamples: Array<{
   before: string;
   after: string;
   label: string;
   town: string;
-}> = [
-  {
-    before: '/images/raw-from-matt/car-showroom/01-stud-frame.jpg',
-    after: '/images/raw-from-matt/building-services/cyberster-display.jpg',
-    label: 'Showroom feature wall — frame to lit display',
-    town: 'Bognor Regis',
-  },
-  {
-    before: '/images/raw-from-matt/self-build/01-timber-frame.jpg',
-    after: '/images/raw-from-matt/self-build/04-doors-open.jpg',
-    label: 'New build — timber frame to handover',
-    town: 'Hampshire',
-  },
-];
-
-// Multi-stage progression galleries — full sequence shown on /services pages
-// Used by ProjectProgression component to tell the full story of a single job.
-export const projectProgressions = [
-  {
-    slug: 'car-showroom-feature-wall',
-    title: 'Showroom feature wall — frame to lit display',
-    town: 'Bognor Regis',
-    service: 'building',
-    stages: [
-      { src: '/images/raw-from-matt/car-showroom/01-stud-frame.jpg', label: 'Timber stud frame' },
-      { src: '/images/raw-from-matt/building-services/cyberster-display.jpg', label: 'Finished — slatted wall + lit display' },
-    ],
-  },
-  {
-    slug: 'car-showroom-partition',
-    title: 'Showroom partition — boarded to finish',
-    town: 'Bognor Regis',
-    service: 'building',
-    stages: [
-      { src: '/images/raw-from-matt/car-showroom/02-plasterboard.jpg', label: 'Plasterboard fixed' },
-      { src: '/images/raw-from-matt/car-showroom/03-plaster-skim.jpg', label: 'Plaster skim' },
-      { src: '/images/raw-from-matt/car-showroom/04-finished-white.jpg', label: 'Finished white' },
-    ],
-  },
-  {
-    slug: 'new-build-house',
-    title: 'New build — frame to handover',
-    town: 'Hampshire',
-    service: 'building',
-    stages: [
-      { src: '/images/raw-from-matt/self-build/01-timber-frame.jpg', label: 'Timber frame mid-build' },
-      { src: '/images/raw-from-matt/self-build/02-drone-solar-progress.jpg', label: 'Solar going on the roof' },
-      { src: '/images/raw-from-matt/self-build/03-resin-driveway-finished.jpg', label: 'Resin driveway laid' },
-      { src: '/images/raw-from-matt/self-build/04-doors-open.jpg', label: 'Handover' },
-    ],
-  },
-];
+}> = [];
 
 // Recently completed jobs ticker — homepage strip
 // TODO FROM MATT: Update monthly with real jobs — keep 6-10 entries, remove oldest first.

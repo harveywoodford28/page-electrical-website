@@ -8,9 +8,8 @@ import FAQAccordion from '@/components/FAQAccordion';
 import CTABand from '@/components/CTABand';
 import TrustStrip from '@/components/TrustStrip';
 import CertificationStrip from '@/components/CertificationStrip';
-import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 import GoogleReviewsWidget from '@/components/GoogleReviewsWidget';
-import { reviews, services, faqs, siteConfig, beforeAfterExamples } from '@/lib/data';
+import { reviews, services, faqs, siteConfig } from '@/lib/data';
 
 const topFaqs = faqs.slice(0, 3);
 
@@ -85,33 +84,6 @@ export default function HomePage() {
             See all services <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
           </Link>
         </Reveal>
-      </section>
-
-      {/* OUR WORK — before/after */}
-      <section className="container-x py-20 md:py-28">
-        <Reveal className="max-w-2xl mb-12">
-          <p className="eyebrow mb-3">Our work</p>
-          <h2 className="h-display text-3xl md:text-5xl leading-[1.05] underline-grow">
-            Before and after — the work in detail.
-          </h2>
-          <p className="mt-8 text-lg text-muted leading-relaxed max-w-prose">
-            Drag the handle to reveal the finish. Real jobs from across Hampshire.
-          </p>
-        </Reveal>
-
-        <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {beforeAfterExamples.map((b, i) => (
-            <Reveal key={i} delay={i * 0.08}>
-              <BeforeAfterSlider
-                before={b.before}
-                after={b.after}
-                label={b.label}
-                town={b.town}
-                placeholder
-              />
-            </Reveal>
-          ))}
-        </div>
       </section>
 
       {/* TRUST / ABOUT PREVIEW */}
