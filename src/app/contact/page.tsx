@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { Phone, Mail, MapPin, Clock, Facebook } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Facebook, ArrowRight } from 'lucide-react';
 import Reveal from '@/components/Reveal';
-import ContactForm from '@/components/ContactForm';
 import { siteConfig } from '@/lib/data';
 
 export const metadata: Metadata = {
@@ -36,15 +35,15 @@ export default function ContactPage() {
               Get a quote. We reply fast.
             </h1>
             <p className="mt-6 text-lg md:text-xl text-white/85 leading-relaxed">
-              Call, email or fill the form. For emergencies, phone is fastest — most call-outs
-              across Hampshire are same-day or next morning.
+              Pick up the phone or drop us an email. For emergencies, phone is fastest — most
+              call-outs across Hampshire are same-day or next morning.
             </p>
           </Reveal>
         </div>
       </section>
 
       <section className="container-x py-20 md:py-28 grid gap-12 lg:grid-cols-12">
-        <Reveal className="lg:col-span-5 space-y-7">
+        <Reveal className="lg:col-span-7 space-y-7">
           <div className="flex items-start gap-4">
             <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-brand">
               <Phone className="h-5 w-5" strokeWidth={2} />
@@ -116,8 +115,31 @@ export default function ContactPage() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.1} className="lg:col-span-7">
-          <ContactForm />
+        <Reveal delay={0.1} className="lg:col-span-5">
+          <div className="rounded-2xl border border-ink/5 bg-mist p-8 md:p-10">
+            <p className="eyebrow mb-3">Fastest way to reach us</p>
+            <h2 className="font-display text-2xl md:text-3xl font-bold leading-tight">
+              Phone first. We pick up.
+            </h2>
+            <p className="mt-4 text-ink/75 leading-relaxed">
+              Tell us a little about the job — what it is, where you are, and how soon you need
+              it. Most enquiries get a quote the same day.
+            </p>
+            <div className="mt-8 flex flex-col gap-3">
+              <a href={siteConfig.phoneHref} className="btn-primary justify-center">
+                <Phone className="h-4 w-4" strokeWidth={2.5} />
+                Call {siteConfig.phone}
+              </a>
+              <a href={siteConfig.emailHref} className="btn-secondary justify-center">
+                <Mail className="h-4 w-4" strokeWidth={2.5} />
+                Email us
+                <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
+              </a>
+            </div>
+            <p className="mt-6 text-xs text-muted">
+              No call-out fee for quotes. No obligation.
+            </p>
+          </div>
         </Reveal>
       </section>
 

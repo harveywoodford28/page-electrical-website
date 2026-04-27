@@ -179,6 +179,18 @@ body {
   100% { transform: translateX(-50%); }
 }
 
+/* Certification marquee */
+.cert-track {
+  animation: certMarquee 35s linear infinite;
+}
+@keyframes certMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cert-track { animation: none; }
+}
+
 /* Before/after slider */
 .ba-slider {
   position: relative;

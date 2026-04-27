@@ -54,14 +54,33 @@ export const imageLibrary = [
   '/images/raw-from-matt/building-services/finished-partition.jpg',
   '/images/raw-from-matt/building-services/chery-bognor-regis.jpg',
   '/images/raw-from-matt/building-services/cyberster-display.jpg',
+  '/images/raw-from-matt/building-services/conservatory-bare-wall.jpg',
+  '/images/raw-from-matt/building-services/media-wall-mid-build.jpg',
+  // Car showroom partition (4-stage progression)
+  '/images/raw-from-matt/car-showroom/01-stud-frame.jpg',
+  '/images/raw-from-matt/car-showroom/02-plasterboard.jpg',
+  '/images/raw-from-matt/car-showroom/03-plaster-skim.jpg',
+  '/images/raw-from-matt/car-showroom/04-finished-white.jpg',
+  // Self-build house (4-stage progression)
+  '/images/raw-from-matt/self-build/01-timber-frame.jpg',
+  '/images/raw-from-matt/self-build/02-drone-solar-progress.jpg',
+  '/images/raw-from-matt/self-build/03-resin-driveway-finished.jpg',
+  '/images/raw-from-matt/self-build/04-doors-open.jpg',
   // Bathroom electrical
   '/images/raw-from-matt/bathroom-electrical/downlights-extractor.jpg',
   '/images/raw-from-matt/bathroom-electrical/led-mirror.jpg',
+  '/images/raw-from-matt/bathroom-electrical/led-mirror-marble.jpg',
+  '/images/raw-from-matt/bathroom-electrical/finished-marble-bathroom.jpg',
   '/images/raw-from-matt/bathroom-electrical/subway-tile-finished.jpg',
   '/images/raw-from-matt/bathroom-electrical/subway-tile-in-progress.jpg',
+  '/images/raw-from-matt/bathroom-electrical/subway-mid-tile.jpg',
   '/images/raw-from-matt/bathroom-electrical/shower-pendant-install.jpg',
+  // Electrical
+  '/images/raw-from-matt/electrical/consumer-unit-wide.jpg',
   // Lighting
   '/images/raw-from-matt/lighting/staircase-from-above.jpg',
+  '/images/raw-from-matt/lighting/chandelier-staircase-alt.jpg',
+  '/images/raw-from-matt/lighting/garden-led-strip-dusk.jpg',
   // Existing assets
   '/images/about-hero.jpg',
   '/images/about-team.jpg',
@@ -79,11 +98,13 @@ export const services = [
     image: '/images/service-repairs.jpg', // consumer unit close-up (about-hero is reserved for About page)
     gallery: [
       '/images/service-repairs.jpg', // consumer unit close-up
+      '/images/raw-from-matt/electrical/consumer-unit-wide.jpg',
       '/images/raw-from-matt/electrical/consumer-unit-closeup.jpg',
       '/images/raw-from-matt/electrical/carpark-lighting.jpg',
       '/images/raw-from-matt/bathroom-electrical/downlights-extractor.jpg',
-      '/images/raw-from-matt/bathroom-electrical/led-mirror.jpg',
-      '/images/hero-2.jpg', // chandelier staircase
+      '/images/raw-from-matt/bathroom-electrical/led-mirror-marble.jpg',
+      '/images/raw-from-matt/lighting/chandelier-staircase-alt.jpg',
+      '/images/raw-from-matt/lighting/garden-led-strip-dusk.jpg',
     ],
   },
   {
@@ -96,6 +117,7 @@ export const services = [
     image: '/images/hero-1.jpg', // 3 Mitsubishi outdoor units (real Page work)
     gallery: [
       '/images/hero-1.jpg',
+      '/images/raw-from-matt/air-conditioning/three-mitsubishi-timber-clad.jpg',
       '/images/raw-from-matt/air-conditioning/f-gas-commissioning.jpg',
       '/images/raw-from-matt/air-conditioning/mitsubishi-indoor-pink-wall.jpg',
       '/images/raw-from-matt/air-conditioning/mitsubishi-outdoor-brick.jpg',
@@ -114,11 +136,16 @@ export const services = [
     image: '/images/about-team.jpg', // wood-frame M&E in progress
     gallery: [
       '/images/about-team.jpg',
-      '/images/faq-image.jpg', // wood frame ceiling
+      '/images/raw-from-matt/self-build/03-resin-driveway-finished.jpg',
+      '/images/raw-from-matt/self-build/04-doors-open.jpg',
+      '/images/raw-from-matt/self-build/01-timber-frame.jpg',
+      '/images/raw-from-matt/car-showroom/04-finished-white.jpg',
+      '/images/raw-from-matt/building-services/media-wall-mid-build.jpg',
       '/images/raw-from-matt/hero/cyberster-showroom.jpg',
       '/images/raw-from-matt/building-services/finished-partition.jpg',
-      '/images/raw-from-matt/bathroom-electrical/subway-tile-finished.jpg', // bathroom build
-      '/images/raw-from-matt/bathroom-electrical/subway-tile-in-progress.jpg',
+      '/images/raw-from-matt/bathroom-electrical/finished-marble-bathroom.jpg',
+      '/images/raw-from-matt/bathroom-electrical/subway-tile-finished.jpg',
+      '/images/raw-from-matt/building-services/conservatory-bare-wall.jpg',
     ],
   },
   {
@@ -133,6 +160,7 @@ export const services = [
       '/images/raw-from-matt/solar/residential-roof-install.jpg',
       '/images/raw-from-matt/hero/drone-solar-self-build.jpg',
       '/images/raw-from-matt/solar/drone-self-build-progress.jpg',
+      '/images/raw-from-matt/self-build/02-drone-solar-progress.jpg',
     ],
   },
   {
@@ -184,14 +212,55 @@ export const serviceTowns = [
 ];
 
 // Before/after slider examples — homepage "Our Work" section.
-// Empty until Matt provides true matched-angle pairs (same camera position, before vs after).
-// The previous pairs were different angles of the same job — not true before/afters.
+// Two real multi-stage progressions delivered by Page.
 export const beforeAfterExamples: Array<{
   before: string;
   after: string;
   label: string;
   town: string;
-}> = [];
+}> = [
+  {
+    before: '/images/raw-from-matt/car-showroom/01-stud-frame.jpg',
+    after: '/images/raw-from-matt/car-showroom/04-finished-white.jpg',
+    label: 'Showroom partition build — frame to finish',
+    town: 'Bognor Regis',
+  },
+  {
+    before: '/images/raw-from-matt/self-build/01-timber-frame.jpg',
+    after: '/images/raw-from-matt/self-build/03-resin-driveway-finished.jpg',
+    label: 'New build — timber frame to handover',
+    town: 'Hampshire',
+  },
+];
+
+// Multi-stage progression galleries — full sequence shown on /services pages
+// Used by ProjectProgression component to tell the full story of a single job.
+export const projectProgressions = [
+  {
+    slug: 'car-showroom-partition',
+    title: 'Showroom partition — full build',
+    town: 'Bognor Regis',
+    service: 'building',
+    stages: [
+      { src: '/images/raw-from-matt/car-showroom/01-stud-frame.jpg', label: 'Timber stud frame' },
+      { src: '/images/raw-from-matt/car-showroom/02-plasterboard.jpg', label: 'Plasterboard fixed' },
+      { src: '/images/raw-from-matt/car-showroom/03-plaster-skim.jpg', label: 'Plaster skim' },
+      { src: '/images/raw-from-matt/car-showroom/04-finished-white.jpg', label: 'Finished + ready for branding' },
+    ],
+  },
+  {
+    slug: 'new-build-house',
+    title: 'New build — frame to handover',
+    town: 'Hampshire',
+    service: 'building',
+    stages: [
+      { src: '/images/raw-from-matt/self-build/01-timber-frame.jpg', label: 'Timber frame mid-build' },
+      { src: '/images/raw-from-matt/self-build/02-drone-solar-progress.jpg', label: 'Solar going on the roof' },
+      { src: '/images/raw-from-matt/self-build/03-resin-driveway-finished.jpg', label: 'Resin driveway laid' },
+      { src: '/images/raw-from-matt/self-build/04-doors-open.jpg', label: 'Handover' },
+    ],
+  },
+];
 
 // Recently completed jobs ticker — homepage strip
 // TODO FROM MATT: Update monthly with real jobs — keep 6-10 entries, remove oldest first.
@@ -210,16 +279,16 @@ export const recentCompletions = [
 // Each badge is rendered as a commented-out placeholder until Matt confirms.
 // When Matt confirms, un-set `pending` to false and swap in the real badge image.
 export const certificationBadges = [
-  { id: 'niceic', label: 'NICEIC Approved', pending: true, scope: 'all' },
-  { id: 'part-p', label: 'Part P Registered', pending: true, scope: 'all' },
-  { id: '18th-edition', label: '18th Edition Qualified', pending: true, scope: 'all' },
-  { id: 'insurance', label: 'Public Liability Insured', pending: true, scope: 'all' },
-  { id: 'checkatrade', label: 'Checkatrade Verified', pending: true, scope: 'all' },
-  { id: 'f-gas', label: 'F-Gas Registered', pending: true, scope: 'air-conditioning' },
-  { id: 'ozev', label: 'OZEV Approved Installer', pending: true, scope: 'ev-chargers' },
-  { id: 'mcs', label: 'MCS Certified Partner', pending: true, scope: 'solar' },
-  { id: 'fmb', label: 'FMB Member', pending: true, scope: 'building' },
-  { id: 'trustmark', label: 'TrustMark Registered', pending: true, scope: 'building' },
+  { id: 'niceic', label: 'NICEIC Approved', acronym: 'NICEIC', tone: 'red', pending: true, scope: 'all' },
+  { id: 'part-p', label: 'Part P Registered', acronym: 'Part P', tone: 'blue', pending: true, scope: 'all' },
+  { id: '18th-edition', label: '18th Edition Qualified', acronym: '18th', tone: 'amber', pending: true, scope: 'all' },
+  { id: 'insurance', label: 'Public Liability Insured', acronym: '£', tone: 'slate', pending: true, scope: 'all' },
+  { id: 'checkatrade', label: 'Checkatrade Verified', acronym: 'Check', tone: 'orange', pending: true, scope: 'all' },
+  { id: 'f-gas', label: 'F-Gas Registered', acronym: 'F-Gas', tone: 'teal', pending: true, scope: 'air-conditioning' },
+  { id: 'ozev', label: 'OZEV Approved Installer', acronym: 'OZEV', tone: 'green', pending: true, scope: 'ev-chargers' },
+  { id: 'mcs', label: 'MCS Certified Partner', acronym: 'MCS', tone: 'lime', pending: true, scope: 'solar' },
+  { id: 'fmb', label: 'FMB Member', acronym: 'FMB', tone: 'indigo', pending: true, scope: 'building' },
+  { id: 'trustmark', label: 'TrustMark Registered', acronym: 'Trust', tone: 'purple', pending: true, scope: 'building' },
 ];
 
 export const values = [
@@ -351,7 +420,7 @@ export const faqs = [
   },
   {
     q: 'How do I get a quote?',
-    a: 'Call 023 9359 3998, email info@page-electrical.co.uk or use the contact form on this site. Tell us a little about the job and we will come back to you fast.',
+    a: 'Call 023 9359 3998 or email info@page-electrical.co.uk. Tell us a little about the job and we will come back to you fast.',
   },
 ];
 

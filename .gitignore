@@ -7,3 +7,9 @@ out/
 *.log
 .vercel
 next-env.d.ts
+tsconfig.tsbuildinfo
+
+# Raw photo-intake folders from Matt — keep local, don't ship to repo
+new photos/
+raw photos/
+Page Raw Photos/
