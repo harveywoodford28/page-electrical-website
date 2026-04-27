@@ -7,12 +7,11 @@ import { Phone, ArrowRight } from 'lucide-react';
 import { siteConfig } from '@/lib/data';
 
 // Hero background collage — cycles through real Page Electrical work photos.
+// Only high-res originals (>400KB) used here. FB-compressed thumbnails blur at full-screen scale.
 const heroImages = [
-  '/images/raw-from-matt/hero/staircase-lighting-1.jpg',
   '/images/raw-from-matt/hero/cyberster-showroom.jpg',
-  '/images/raw-from-matt/hero/drone-solar-self-build.jpg',
-  '/images/raw-from-matt/hero/luxury-kitchen.jpg',
-  '/images/raw-from-matt/hero/commercial-ac-rooftop.jpg',
+  '/images/raw-from-matt/building-services/chery-bognor-regis.jpg',
+  '/images/raw-from-matt/solar/residential-roof-install.jpg',
 ];
 
 const INTERVAL_MS = 7000;

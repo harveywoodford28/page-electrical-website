@@ -76,12 +76,13 @@ export const services = [
     description:
       'Full electrical installations, fault-finding, rewires, fuseboard upgrades, inspections and certification. Domestic, commercial and industrial work across Hampshire.',
     icon: 'Zap',
-    image: '/images/raw-from-matt/electrical/consumer-unit-closeup.jpg',
+    // Using bathroom-electrical hero (downlights + extractor install — high-res). More dedicated electrical close-ups pending from Matt.
+    image: '/images/raw-from-matt/bathroom-electrical/shower-pendant-install.jpg',
     gallery: [
+      '/images/raw-from-matt/bathroom-electrical/shower-pendant-install.jpg',
+      '/images/raw-from-matt/bathroom-electrical/downlights-extractor.jpg',
       '/images/raw-from-matt/electrical/consumer-unit-closeup.jpg',
-      '/images/raw-from-matt/electrical/carpark-lighting.jpg',
       '/images/raw-from-matt/electrical/residential-exterior.jpg',
-      '/images/raw-from-matt/lighting/staircase-from-above.jpg',
     ],
   },
   {
@@ -123,10 +124,11 @@ export const services = [
     description:
       'Solar panel design and installation, battery storage, and grid-tied systems. Help home and business owners take control of rising energy costs.',
     icon: 'Sun',
-    image: '/images/raw-from-matt/hero/drone-solar-self-build.jpg',
+    // High-res residential roof install as hero (drone shots are FB-compressed and blur at full-screen scale)
+    image: '/images/raw-from-matt/solar/residential-roof-install.jpg',
     gallery: [
-      '/images/raw-from-matt/hero/drone-solar-self-build.jpg',
       '/images/raw-from-matt/solar/residential-roof-install.jpg',
+      '/images/raw-from-matt/hero/drone-solar-self-build.jpg',
       '/images/raw-from-matt/solar/drone-self-build-progress.jpg',
     ],
   },
@@ -179,27 +181,14 @@ export const serviceTowns = [
 ];
 
 // Before/after slider examples — homepage "Our Work" section.
-// Real matched-angle pairs from Matt's library (April 2026).
-export const beforeAfterExamples = [
-  {
-    before: '/images/raw-from-matt/bathroom-electrical/subway-tile-in-progress.jpg',
-    after: '/images/raw-from-matt/bathroom-electrical/subway-tile-finished.jpg',
-    label: 'Bathroom rewire + finish',
-    town: 'Hampshire',
-  },
-  {
-    before: '/images/raw-from-matt/building-services/framing-mid-build.jpg',
-    after: '/images/raw-from-matt/building-services/finished-partition.jpg',
-    label: 'Showroom partition + M&E',
-    town: 'Hampshire',
-  },
-  {
-    before: '/images/raw-from-matt/solar/drone-self-build-progress.jpg',
-    after: '/images/raw-from-matt/hero/drone-solar-self-build.jpg',
-    label: 'Solar PV — self-build',
-    town: 'Hampshire',
-  },
-];
+// Empty until Matt provides true matched-angle pairs (same camera position, before vs after).
+// The previous pairs were different angles of the same job — not true before/afters.
+export const beforeAfterExamples: Array<{
+  before: string;
+  after: string;
+  label: string;
+  town: string;
+}> = [];
 
 // Recently completed jobs ticker — homepage strip
 // TODO FROM MATT: Update monthly with real jobs — keep 6-10 entries, remove oldest first.
