@@ -44,9 +44,14 @@ export default function ServicesPage() {
       </section>
 
       <section className="container-x py-20 md:py-28">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
           {services.map((s, i) => (
-            <ServiceCard key={s.slug} {...s} index={i} />
+            <div
+              key={s.slug}
+              className={`lg:col-span-2 ${i === 3 ? 'lg:col-start-2' : ''}`}
+            >
+              <ServiceCard {...s} index={i} />
+            </div>
           ))}
         </div>
       </section>

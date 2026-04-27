@@ -95,14 +95,19 @@ export const services = [
     description:
       'Full electrical installations, fault-finding, rewires, fuseboard upgrades, inspections and certification. Domestic, commercial and industrial work across Hampshire.',
     icon: 'Zap',
-    image: '/images/service-repairs.jpg', // consumer unit close-up (about-hero is reserved for About page)
+    image: '/images/service-repairs.jpg',
     gallery: [
-      '/images/service-repairs.jpg', // consumer unit — only one needed
+      '/images/service-repairs.jpg',
+      '/images/about-team.jpg', // luxury kitchen — cove uplighting + downlights install
+      '/images/raw-from-matt/lighting/chandelier-staircase-alt.jpg',
+      '/images/raw-from-matt/lighting/staircase-from-above.jpg',
+      '/images/raw-from-matt/lighting/garden-led-strip-dusk.jpg',
       '/images/raw-from-matt/electrical/carpark-lighting.jpg',
+      '/images/raw-from-matt/electrical/residential-exterior.jpg',
       '/images/raw-from-matt/bathroom-electrical/downlights-extractor.jpg',
       '/images/raw-from-matt/bathroom-electrical/led-mirror-marble.jpg',
-      '/images/raw-from-matt/lighting/chandelier-staircase-alt.jpg',
-      '/images/raw-from-matt/lighting/garden-led-strip-dusk.jpg',
+      '/images/raw-from-matt/bathroom-electrical/led-mirror.jpg',
+      '/images/raw-from-matt/bathroom-electrical/shower-pendant-install.jpg',
     ],
   },
   {
@@ -112,16 +117,19 @@ export const services = [
     description:
       'Split-system and multi-split air conditioning installation, servicing and repair. Keep homes, shops and offices comfortable year-round.',
     icon: 'Snowflake',
-    image: '/images/hero-1.jpg', // 3 Mitsubishi outdoor units (real Page work)
+    image: '/images/hero-1.jpg',
     gallery: [
       '/images/hero-1.jpg',
-      '/images/raw-from-matt/air-conditioning/three-mitsubishi-timber-clad.jpg',
       '/images/raw-from-matt/air-conditioning/f-gas-commissioning.jpg',
       '/images/raw-from-matt/air-conditioning/mitsubishi-indoor-pink-wall.jpg',
       '/images/raw-from-matt/air-conditioning/mitsubishi-outdoor-brick.jpg',
       '/images/raw-from-matt/air-conditioning/rooftop-commercial-skyline.jpg',
       '/images/raw-from-matt/air-conditioning/multi-zone-outdoor.jpg',
       '/images/raw-from-matt/air-conditioning/bms-ae200-controller.jpg',
+      '/images/raw-from-matt/air-conditioning/mitsubishi-controller.jpg',
+      '/images/raw-from-matt/air-conditioning/commercial-rooftop-alt.jpg',
+      '/images/raw-from-matt/air-conditioning/ceiling-cassette.jpg',
+      '/images/raw-from-matt/hero/commercial-ac-rooftop.jpg',
     ],
   },
   {
@@ -131,19 +139,28 @@ export const services = [
     description:
       'End-to-end M&E for extensions, refurbishments and light commercial fit-outs. Coordinated with other trades and delivered on programme.',
     icon: 'Building2',
-    image: '/images/about-team.jpg', // wood-frame M&E in progress
+    image: '/images/faq-image.jpg', // wood-frame ceiling with electrical wires hanging
     gallery: [
-      '/images/about-team.jpg',
+      '/images/faq-image.jpg', // building site — wires hanging through wood frame
+      '/images/raw-from-matt/building-services/framing-mid-build.jpg',
+      '/images/raw-from-matt/self-build/01-timber-frame.jpg',
+      '/images/raw-from-matt/self-build/02-drone-solar-progress.jpg',
       '/images/raw-from-matt/self-build/03-resin-driveway-finished.jpg',
       '/images/raw-from-matt/self-build/04-doors-open.jpg',
-      '/images/raw-from-matt/self-build/01-timber-frame.jpg',
+      '/images/raw-from-matt/car-showroom/01-stud-frame.jpg',
+      '/images/raw-from-matt/car-showroom/02-plasterboard.jpg',
+      '/images/raw-from-matt/car-showroom/03-plaster-skim.jpg',
       '/images/raw-from-matt/car-showroom/04-finished-white.jpg',
-      '/images/raw-from-matt/building-services/media-wall-mid-build.jpg',
+      '/images/raw-from-matt/building-services/cyberster-display.jpg',
       '/images/raw-from-matt/hero/cyberster-showroom.jpg',
+      '/images/raw-from-matt/building-services/chery-bognor-regis.jpg',
       '/images/raw-from-matt/building-services/finished-partition.jpg',
+      '/images/raw-from-matt/building-services/media-wall-mid-build.jpg',
+      '/images/raw-from-matt/building-services/conservatory-bare-wall.jpg',
       '/images/raw-from-matt/bathroom-electrical/finished-marble-bathroom.jpg',
       '/images/raw-from-matt/bathroom-electrical/subway-tile-finished.jpg',
-      '/images/raw-from-matt/building-services/conservatory-bare-wall.jpg',
+      '/images/raw-from-matt/bathroom-electrical/subway-tile-in-progress.jpg',
+      '/images/raw-from-matt/bathroom-electrical/subway-mid-tile.jpg',
     ],
   },
   {
@@ -153,7 +170,7 @@ export const services = [
     description:
       'Solar panel design and installation, battery storage, and grid-tied systems. Help home and business owners take control of rising energy costs.',
     icon: 'Sun',
-    image: '/images/raw-from-matt/solar/residential-roof-install.jpg', // panels on roof
+    image: '/images/raw-from-matt/solar/residential-roof-install.jpg',
     gallery: [
       '/images/raw-from-matt/solar/residential-roof-install.jpg',
       '/images/raw-from-matt/hero/drone-solar-self-build.jpg',
@@ -168,10 +185,10 @@ export const services = [
     description:
       'OZEV-approved EV charge point installation for homes and workplaces. Tidy cabling, fast turnaround and clear advice on the right charger for you.',
     icon: 'PlugZap',
-    image: '/images/raw-from-matt/ev-chargers/brick-wall-charger.jpg', // 778KB high-res
-    // Note: only one real EV install in library (two near-identical angles). More photos pending from Matt.
+    image: '/images/raw-from-matt/ev-chargers/brick-wall-charger.jpg',
     gallery: [
       '/images/raw-from-matt/ev-chargers/brick-wall-charger.jpg',
+      '/images/raw-from-matt/ev-chargers/brick-wall-charger-alt.jpg',
     ],
   },
 ] as const;
@@ -183,7 +200,7 @@ export const recentProjects = [
   { src: '/images/service-repairs.jpg', label: 'Fuse board upgrade' },
   { src: '/images/raw-from-matt/air-conditioning/f-gas-commissioning.jpg', label: 'AC install' },
   { src: '/images/raw-from-matt/ev-chargers/brick-wall-charger.jpg', label: 'EV charger' },
-  { src: '/images/about-team.jpg', label: 'Commercial M&E' },
+  { src: '/images/about-team.jpg', label: 'Kitchen lighting' },
   { src: '/images/service-maintenance.jpg', label: 'Solar PV + battery' },
   { src: '/images/hero-2.jpg', label: 'Lighting design' },
 ];
@@ -219,13 +236,13 @@ export const beforeAfterExamples: Array<{
 }> = [
   {
     before: '/images/raw-from-matt/car-showroom/01-stud-frame.jpg',
-    after: '/images/raw-from-matt/car-showroom/04-finished-white.jpg',
-    label: 'Showroom partition build — frame to finish',
+    after: '/images/raw-from-matt/building-services/cyberster-display.jpg',
+    label: 'Showroom feature wall — frame to lit display',
     town: 'Bognor Regis',
   },
   {
     before: '/images/raw-from-matt/self-build/01-timber-frame.jpg',
-    after: '/images/raw-from-matt/self-build/03-resin-driveway-finished.jpg',
+    after: '/images/raw-from-matt/self-build/04-doors-open.jpg',
     label: 'New build — timber frame to handover',
     town: 'Hampshire',
   },
@@ -235,15 +252,24 @@ export const beforeAfterExamples: Array<{
 // Used by ProjectProgression component to tell the full story of a single job.
 export const projectProgressions = [
   {
-    slug: 'car-showroom-partition',
-    title: 'Showroom partition — full build',
+    slug: 'car-showroom-feature-wall',
+    title: 'Showroom feature wall — frame to lit display',
     town: 'Bognor Regis',
     service: 'building',
     stages: [
       { src: '/images/raw-from-matt/car-showroom/01-stud-frame.jpg', label: 'Timber stud frame' },
+      { src: '/images/raw-from-matt/building-services/cyberster-display.jpg', label: 'Finished — slatted wall + lit display' },
+    ],
+  },
+  {
+    slug: 'car-showroom-partition',
+    title: 'Showroom partition — boarded to finish',
+    town: 'Bognor Regis',
+    service: 'building',
+    stages: [
       { src: '/images/raw-from-matt/car-showroom/02-plasterboard.jpg', label: 'Plasterboard fixed' },
       { src: '/images/raw-from-matt/car-showroom/03-plaster-skim.jpg', label: 'Plaster skim' },
-      { src: '/images/raw-from-matt/car-showroom/04-finished-white.jpg', label: 'Finished + ready for branding' },
+      { src: '/images/raw-from-matt/car-showroom/04-finished-white.jpg', label: 'Finished white' },
     ],
   },
   {

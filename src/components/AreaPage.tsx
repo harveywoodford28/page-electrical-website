@@ -130,9 +130,14 @@ export default function AreaPage({
               we cover the lot across {town}.
             </p>
           </Reveal>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
             {services.map((s, i) => (
-              <ServiceCard key={s.slug} {...s} index={i} />
+              <div
+                key={s.slug}
+                className={`lg:col-span-2 ${i === 3 ? 'lg:col-start-2' : ''}`}
+              >
+                <ServiceCard {...s} index={i} />
+              </div>
             ))}
           </div>
         </div>

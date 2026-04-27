@@ -69,9 +69,14 @@ export default function HomePage() {
           </p>
         </Reveal>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
           {services.map((s, i) => (
-            <ServiceCard key={s.slug} {...s} index={i} />
+            <div
+              key={s.slug}
+              className={`lg:col-span-2 ${i === 3 ? 'lg:col-start-2' : ''}`}
+            >
+              <ServiceCard {...s} index={i} />
+            </div>
           ))}
         </div>
 
@@ -120,10 +125,6 @@ export default function HomePage() {
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"
                 className="object-cover"
-              />
-              <div
-                aria-hidden
-                className="absolute -bottom-3 -right-3 h-24 w-24 rounded-2xl bg-brand shadow-lg -z-0"
               />
             </div>
           </Reveal>

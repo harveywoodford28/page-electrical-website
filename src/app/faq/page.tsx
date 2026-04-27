@@ -67,10 +67,6 @@ export default function FAQPage() {
               sizes="(max-width: 768px) 100vw, 33vw"
               className="object-cover"
             />
-            <div
-              aria-hidden
-              className="absolute -bottom-3 -right-3 h-24 w-24 rounded-2xl bg-brand shadow-lg -z-0"
-            />
           </div>
         </Reveal>
         <div className="lg:col-span-8">
