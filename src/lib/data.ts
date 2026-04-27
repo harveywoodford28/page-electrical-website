@@ -76,14 +76,14 @@ export const services = [
     description:
       'Full electrical installations, fault-finding, rewires, fuseboard upgrades, inspections and certification. Domestic, commercial and industrial work across Hampshire.',
     icon: 'Zap',
-    image: '/images/about-hero.jpg', // electrician fitting fuseboard — perfect electrical hero
+    image: '/images/service-repairs.jpg', // consumer unit close-up (about-hero is reserved for About page)
     gallery: [
-      '/images/about-hero.jpg',
       '/images/service-repairs.jpg', // consumer unit close-up
-      '/images/service-installations.jpg', // garden up-lighting
-      '/images/hero-2.jpg', // chandelier staircase
-      '/images/raw-from-matt/bathroom-electrical/shower-pendant-install.jpg',
+      '/images/raw-from-matt/electrical/consumer-unit-closeup.jpg',
+      '/images/raw-from-matt/electrical/carpark-lighting.jpg',
       '/images/raw-from-matt/bathroom-electrical/downlights-extractor.jpg',
+      '/images/raw-from-matt/bathroom-electrical/led-mirror.jpg',
+      '/images/hero-2.jpg', // chandelier staircase
     ],
   },
   {
@@ -111,13 +111,14 @@ export const services = [
     description:
       'End-to-end M&E for extensions, refurbishments and light commercial fit-outs. Coordinated with other trades and delivered on programme.',
     icon: 'Building2',
-    image: '/images/about-team.jpg', // wood-frame M&E in progress (real Page work)
+    image: '/images/about-team.jpg', // wood-frame M&E in progress
     gallery: [
       '/images/about-team.jpg',
       '/images/faq-image.jpg', // wood frame ceiling
       '/images/raw-from-matt/hero/cyberster-showroom.jpg',
       '/images/raw-from-matt/building-services/finished-partition.jpg',
-      '/images/raw-from-matt/building-services/chery-bognor-regis.jpg',
+      '/images/raw-from-matt/bathroom-electrical/subway-tile-finished.jpg', // bathroom build
+      '/images/raw-from-matt/bathroom-electrical/subway-tile-in-progress.jpg',
     ],
   },
   {
@@ -127,9 +128,8 @@ export const services = [
     description:
       'Solar panel design and installation, battery storage, and grid-tied systems. Help home and business owners take control of rising energy costs.',
     icon: 'Sun',
-    image: '/images/service-maintenance.jpg', // FOX solar inverter + FuseBox (real Page work)
+    image: '/images/raw-from-matt/solar/residential-roof-install.jpg', // panels on roof
     gallery: [
-      '/images/service-maintenance.jpg',
       '/images/raw-from-matt/solar/residential-roof-install.jpg',
       '/images/raw-from-matt/hero/drone-solar-self-build.jpg',
       '/images/raw-from-matt/solar/drone-self-build-progress.jpg',
@@ -143,9 +143,9 @@ export const services = [
       'OZEV-approved EV charge point installation for homes and workplaces. Tidy cabling, fast turnaround and clear advice on the right charger for you.',
     icon: 'PlugZap',
     image: '/images/raw-from-matt/ev-chargers/brick-wall-charger.jpg', // 778KB high-res
+    // Note: only one real EV install in library (two near-identical angles). More photos pending from Matt.
     gallery: [
       '/images/raw-from-matt/ev-chargers/brick-wall-charger.jpg',
-      '/images/raw-from-matt/ev-chargers/brick-wall-charger-alt.jpg',
     ],
   },
 ] as const;
