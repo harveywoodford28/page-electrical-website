@@ -7,13 +7,11 @@ import { Phone, ArrowRight } from 'lucide-react';
 import { siteConfig } from '@/lib/data';
 
 // Hero background collage — cycles through real Page Electrical work photos.
-// All high-res originals. FB-compressed thumbnails are excluded (blur at scale).
+// All high-res originals. FB-compressed thumbnails excluded (blur at scale).
 const heroImages = [
-  '/images/hero-2.jpg', // chandelier staircase — Harvey's favourite, premium
-  '/images/service-installations.jpg', // garden up-lighting at dusk
-  '/images/raw-from-matt/hero/cyberster-showroom.jpg', // MG Cyberster dealership
+  '/images/hero-2.jpg', // chandelier staircase — Harvey's favourite
+  '/images/raw-from-matt/hero/cyberster-showroom.jpg', // MG Cyberster dealership interior
   '/images/hero-1.jpg', // 3 Mitsubishi outdoor AC units
-  '/images/raw-from-matt/building-services/chery-bognor-regis.jpg', // Chery exterior
 ];
 
 const INTERVAL_MS = 7000;
