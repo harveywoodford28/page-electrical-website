@@ -7,11 +7,12 @@ import { Phone, ArrowRight } from 'lucide-react';
 import { siteConfig } from '@/lib/data';
 
 // Hero background collage — cycles through real Page Electrical work photos.
-// TODO FROM MATT: Drop more real job photos into /public/images and add to this array.
 const heroImages = [
-  '/images/hero-1.jpg',
-  '/images/hero-2.jpg',
-  '/images/service-installations.jpg',
+  '/images/raw-from-matt/hero/staircase-lighting-1.jpg',
+  '/images/raw-from-matt/hero/cyberster-showroom.jpg',
+  '/images/raw-from-matt/hero/drone-solar-self-build.jpg',
+  '/images/raw-from-matt/hero/luxury-kitchen.jpg',
+  '/images/raw-from-matt/hero/commercial-ac-rooftop.jpg',
 ];
 
 const INTERVAL_MS = 7000;

@@ -18,20 +18,54 @@ export const siteConfig = {
     'https://www.google.com/search?q=page+electrical+installations&rlz=1C5GCEM_enGB1115GB1117&oq=page&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGDkyBggCEEUYQDIKCAMQABixAxiABDIGCAQQRRg8MgYIBRBFGDwyBggGEEUYPDIGCAcQRRg80gEIMTIyNWowajSoAgCwAgE&sourceid=chrome&ie=UTF-8#lrd=0x487467a24b77b8c7:0x409c1c72965f5b16,3,,,,',
 };
 
-// Image library — every image we have available
+// Image library — every image we have available.
+// Real Page Electrical job photos are organised under /images/raw-from-matt/[category]/.
 export const imageLibrary = [
-  '/images/hero-1.jpg',
-  '/images/hero-2.jpg',
+  // Hero candidates — premium quality
+  '/images/raw-from-matt/hero/staircase-lighting-1.jpg',
+  '/images/raw-from-matt/hero/luxury-kitchen.jpg',
+  '/images/raw-from-matt/hero/commercial-ac-rooftop.jpg',
+  '/images/raw-from-matt/hero/cyberster-showroom.jpg',
+  '/images/raw-from-matt/hero/drone-solar-self-build.jpg',
+  // Page Electrical brand
+  '/images/raw-from-matt/page-electrical/van-multistorey.jpg',
+  // Electrical
+  '/images/raw-from-matt/electrical/consumer-unit-closeup.jpg',
+  '/images/raw-from-matt/electrical/carpark-lighting.jpg',
+  '/images/raw-from-matt/electrical/residential-exterior.jpg',
+  // Air conditioning
+  '/images/raw-from-matt/air-conditioning/f-gas-commissioning.jpg',
+  '/images/raw-from-matt/air-conditioning/mitsubishi-indoor-pink-wall.jpg',
+  '/images/raw-from-matt/air-conditioning/mitsubishi-outdoor-brick.jpg',
+  '/images/raw-from-matt/air-conditioning/rooftop-commercial-skyline.jpg',
+  '/images/raw-from-matt/air-conditioning/outdoor-with-isolator.jpg',
+  '/images/raw-from-matt/air-conditioning/mitsubishi-controller.jpg',
+  '/images/raw-from-matt/air-conditioning/bms-ae200-controller.jpg',
+  '/images/raw-from-matt/air-conditioning/commercial-rooftop-alt.jpg',
+  '/images/raw-from-matt/air-conditioning/multi-zone-outdoor.jpg',
+  // EV chargers
+  '/images/raw-from-matt/ev-chargers/brick-wall-charger.jpg',
+  '/images/raw-from-matt/ev-chargers/brick-wall-charger-alt.jpg',
+  // Solar
+  '/images/raw-from-matt/solar/residential-roof-install.jpg',
+  '/images/raw-from-matt/solar/drone-self-build-progress.jpg',
+  // Building services
+  '/images/raw-from-matt/building-services/framing-mid-build.jpg',
+  '/images/raw-from-matt/building-services/finished-partition.jpg',
+  '/images/raw-from-matt/building-services/chery-bognor-regis.jpg',
+  '/images/raw-from-matt/building-services/cyberster-display.jpg',
+  // Bathroom electrical
+  '/images/raw-from-matt/bathroom-electrical/downlights-extractor.jpg',
+  '/images/raw-from-matt/bathroom-electrical/led-mirror.jpg',
+  '/images/raw-from-matt/bathroom-electrical/subway-tile-finished.jpg',
+  '/images/raw-from-matt/bathroom-electrical/subway-tile-in-progress.jpg',
+  '/images/raw-from-matt/bathroom-electrical/shower-pendant-install.jpg',
+  // Lighting
+  '/images/raw-from-matt/lighting/staircase-from-above.jpg',
+  // Existing assets
   '/images/about-hero.jpg',
   '/images/about-team.jpg',
-  '/images/service-installations.jpg',
-  '/images/service-repairs.jpg',
-  '/images/service-maintenance.jpg',
-  '/images/reviews-hero.jpg',
-  '/images/faq-image.jpg',
   '/images/matt-page.jpg',
-  '/images/team-2.png',
-  '/images/team-3.png',
 ] as const;
 
 export const services = [
@@ -42,12 +76,12 @@ export const services = [
     description:
       'Full electrical installations, fault-finding, rewires, fuseboard upgrades, inspections and certification. Domestic, commercial and industrial work across Hampshire.',
     icon: 'Zap',
-    // Consistent icon-only card style on homepage. Detail page gallery still uses the photos below.
-    image: null,
+    image: '/images/raw-from-matt/electrical/consumer-unit-closeup.jpg',
     gallery: [
-      '/images/service-installations.jpg',
-      '/images/hero-1.jpg',
-      '/images/about-team.jpg',
+      '/images/raw-from-matt/electrical/consumer-unit-closeup.jpg',
+      '/images/raw-from-matt/electrical/carpark-lighting.jpg',
+      '/images/raw-from-matt/electrical/residential-exterior.jpg',
+      '/images/raw-from-matt/lighting/staircase-from-above.jpg',
     ],
   },
   {
@@ -57,9 +91,15 @@ export const services = [
     description:
       'Split-system and multi-split air conditioning installation, servicing and repair. Keep homes, shops and offices comfortable year-round.',
     icon: 'Snowflake',
-    // TODO FROM MATT: Add real AC install photos to enable card image
-    image: null,
-    gallery: [],
+    image: '/images/raw-from-matt/air-conditioning/f-gas-commissioning.jpg',
+    gallery: [
+      '/images/raw-from-matt/air-conditioning/f-gas-commissioning.jpg',
+      '/images/raw-from-matt/air-conditioning/mitsubishi-indoor-pink-wall.jpg',
+      '/images/raw-from-matt/air-conditioning/mitsubishi-outdoor-brick.jpg',
+      '/images/raw-from-matt/air-conditioning/rooftop-commercial-skyline.jpg',
+      '/images/raw-from-matt/air-conditioning/multi-zone-outdoor.jpg',
+      '/images/raw-from-matt/air-conditioning/bms-ae200-controller.jpg',
+    ],
   },
   {
     slug: 'building',
@@ -68,9 +108,13 @@ export const services = [
     description:
       'End-to-end M&E for extensions, refurbishments and light commercial fit-outs. Coordinated with other trades and delivered on programme.',
     icon: 'Building2',
-    // TODO FROM MATT: Add real building/M&E photos to enable card image
-    image: null,
-    gallery: [],
+    image: '/images/raw-from-matt/hero/cyberster-showroom.jpg',
+    gallery: [
+      '/images/raw-from-matt/hero/cyberster-showroom.jpg',
+      '/images/raw-from-matt/building-services/finished-partition.jpg',
+      '/images/raw-from-matt/building-services/chery-bognor-regis.jpg',
+      '/images/raw-from-matt/building-services/cyberster-display.jpg',
+    ],
   },
   {
     slug: 'solar',
@@ -79,9 +123,12 @@ export const services = [
     description:
       'Solar panel design and installation, battery storage, and grid-tied systems. Help home and business owners take control of rising energy costs.',
     icon: 'Sun',
-    // TODO FROM MATT: Add real solar install photos to enable card image
-    image: null,
-    gallery: [],
+    image: '/images/raw-from-matt/hero/drone-solar-self-build.jpg',
+    gallery: [
+      '/images/raw-from-matt/hero/drone-solar-self-build.jpg',
+      '/images/raw-from-matt/solar/residential-roof-install.jpg',
+      '/images/raw-from-matt/solar/drone-self-build-progress.jpg',
+    ],
   },
   {
     slug: 'ev-chargers',
@@ -90,9 +137,11 @@ export const services = [
     description:
       'OZEV-approved EV charge point installation for homes and workplaces. Tidy cabling, fast turnaround and clear advice on the right charger for you.',
     icon: 'PlugZap',
-    // TODO FROM MATT: Add real EV charger install photos to enable card image
-    image: null,
-    gallery: [],
+    image: '/images/raw-from-matt/ev-chargers/brick-wall-charger.jpg',
+    gallery: [
+      '/images/raw-from-matt/ev-chargers/brick-wall-charger.jpg',
+      '/images/raw-from-matt/ev-chargers/brick-wall-charger-alt.jpg',
+    ],
   },
 ] as const;
 
@@ -100,12 +149,12 @@ export type ServiceSlug = (typeof services)[number]['slug'];
 
 // Recent projects thumbnails — 6 pics for the homepage strip
 export const recentProjects = [
-  { src: '/images/hero-1.jpg', label: 'Full rewire' },
-  { src: '/images/service-installations.jpg', label: 'Fuse board upgrade' },
-  { src: '/images/service-repairs.jpg', label: 'AC install' },
-  { src: '/images/hero-2.jpg', label: 'EV charger' },
-  { src: '/images/service-maintenance.jpg', label: 'Commercial M&E' },
-  { src: '/images/about-team.jpg', label: 'Light industrial' },
+  { src: '/images/raw-from-matt/electrical/consumer-unit-closeup.jpg', label: 'Fuse board upgrade' },
+  { src: '/images/raw-from-matt/air-conditioning/f-gas-commissioning.jpg', label: 'AC install' },
+  { src: '/images/raw-from-matt/ev-chargers/brick-wall-charger.jpg', label: 'EV charger' },
+  { src: '/images/raw-from-matt/building-services/finished-partition.jpg', label: 'Commercial M&E' },
+  { src: '/images/raw-from-matt/solar/residential-roof-install.jpg', label: 'Solar PV' },
+  { src: '/images/raw-from-matt/hero/staircase-lighting-1.jpg', label: 'Lighting design' },
 ];
 
 export const trustPoints = [
@@ -129,27 +178,26 @@ export const serviceTowns = [
   { slug: 'southsea', name: 'Southsea', x: 470, y: 370, primary: false },
 ];
 
-// Before/after slider examples — homepage "Our Work" section
-// TODO FROM MATT: Replace placeholder image pairs with real before/after photos (same angle, same crop).
-// For each item, `before` shows pre-work and `after` shows completed install.
+// Before/after slider examples — homepage "Our Work" section.
+// Real matched-angle pairs from Matt's library (April 2026).
 export const beforeAfterExamples = [
   {
-    before: '/images/service-repairs.jpg',
-    after: '/images/service-installations.jpg',
-    label: 'Consumer unit upgrade',
-    town: 'Gosport',
+    before: '/images/raw-from-matt/bathroom-electrical/subway-tile-in-progress.jpg',
+    after: '/images/raw-from-matt/bathroom-electrical/subway-tile-finished.jpg',
+    label: 'Bathroom rewire + finish',
+    town: 'Hampshire',
   },
   {
-    before: '/images/service-maintenance.jpg',
-    after: '/images/hero-1.jpg',
-    label: 'Full rewire + finish',
-    town: 'Portsmouth',
+    before: '/images/raw-from-matt/building-services/framing-mid-build.jpg',
+    after: '/images/raw-from-matt/building-services/finished-partition.jpg',
+    label: 'Showroom partition + M&E',
+    town: 'Hampshire',
   },
   {
-    before: '/images/hero-2.jpg',
-    after: '/images/service-installations.jpg',
-    label: 'EV charger install',
-    town: 'Fareham',
+    before: '/images/raw-from-matt/solar/drone-self-build-progress.jpg',
+    after: '/images/raw-from-matt/hero/drone-solar-self-build.jpg',
+    label: 'Solar PV — self-build',
+    town: 'Hampshire',
   },
 ];
 
